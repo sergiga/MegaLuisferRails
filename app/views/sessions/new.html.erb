@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="card card-container">
+    <%= form_for(:session, url: login_path, :html => {:class => "form-signin"}) do |f| %>
+
+      <%= f.text_field :username, id: 'inputUsername', class: 'form-control', placeholder: 'Usuario / Email', autofocus: true %>
+
+      <%= f.password_field :password, id: 'inputPassword', class: 'form-control', placeholder: 'Contraseña' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
