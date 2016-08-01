@@ -6,7 +6,7 @@ body {
 
 .card-container.card {
   max-width: 400px;
-  padding: 40px 40px;
+  padding: 30px 30px;
   overflow: hidden;
 }
 
@@ -36,6 +36,9 @@ body {
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+}
+.img-logo {
+  margin-bottom: 30px;
 }
 .form-signin .checkbox {
   font-weight: normal;
