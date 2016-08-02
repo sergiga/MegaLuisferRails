@@ -7,8 +7,10 @@ gem 'rails', '~> 5.0.0'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+# Use Bootstrap and SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+#gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -22,6 +24,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Use bcrypt to make a secure password authentication
+gem 'bcrypt', '~>3.1.11'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

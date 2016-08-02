@@ -1,0 +1,29 @@
+<% unless flash.empty? %>
+  <div class="card flash_msg">
+    <% flash.each do |name, message| %>
+      <div class="text-center alert">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<div class="container">
+  <div class="card card-container">
+    <%= form_for(:session, url: login_path, :html => { :class => "form-signin" }) do |f| %>
+
+      <%= image_tag 'logo-empresa.PNG', class: 'img-logo', width: '300px' %>
+
+      <%= f.text_field :username, id: 'inputUsername', class: 'form-control', placeholder: 'Usuario / Email', autofocus: true %>
+
+      <%= f.password_field :password, id: 'inputPassword', class: 'form-control', placeholder: 'Contraseña' %>
+
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :remember %> Recordar mis datos.
+        </label>
+      </div>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
