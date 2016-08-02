@@ -14,4 +14,14 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def authenticate_user
+    redirect_to root_url unless logged_in?
+  end
+
+  # Logs out the current user
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
+  end
 end

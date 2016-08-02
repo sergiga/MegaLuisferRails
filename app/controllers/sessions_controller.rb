@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  before_action :check_authenticate, only: :new
 
   def create  # Log in action
     user =  User.find_by(username: params[:session][:username]) ||
@@ -19,5 +18,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy # Log out action
+    log_out
+    redirect_to root_url
   end
+
+  private
+    def check_authenticate
+      redirect_to home_path
+    end
 end
