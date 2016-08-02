@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create  # Log in action
-    user =  User.find_by(username: params[:username]) ||
-            User.find_by(email: params[:username])
-    if user && user.authenticate(params[:password])
+    user =  User.find_by(username: params[:session][:username]) ||
+            User.find_by(email: params[:session][:username])
+    if user && user.authenticate(params[:session][:password])
       # Log the user in the home page
       log_in user
       redirect_to home_path
