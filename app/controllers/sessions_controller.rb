@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
             User.find_by(email: params[:username])
     if user && user.authenticate(params[:password])
       # Log the user in the home page
+      log_in user
+      redirect_to home_path
     else
       # Show errors highlighting the fields
       flash.now[:danger] =  'El nombre de usuario y la contraseña que ingresaste

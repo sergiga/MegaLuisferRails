@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   post    '/login',   to: 'sessions#create'
   delete  '/login',   to: 'sessions#destroy'
 
+  get     '/home',    to: 'pages#home'
+
   resources :users
 end
