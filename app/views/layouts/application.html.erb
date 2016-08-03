@@ -9,6 +9,20 @@
   </head>
 
   <body class="<%= controller_name %>">
+    <div id="header" class="page-navbar header-fixed">
+      <div class="navbar-logo">
+        MEGALUISFER
+      </div>
+      <div id="navbar-no-collapse" class="navbar-no-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" aria-expanded="false">
+              Luisfer
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
