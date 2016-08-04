@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout 'login'
+
   before_action :check_authenticate, only: :new
 
   def create  # Log in action
