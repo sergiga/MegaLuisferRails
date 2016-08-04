@@ -6,23 +6,64 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.css">
   </head>
 
   <body class="<%= controller_name %>">
-    <div id="header" class="page-navbar header-fixed">
-      <div class="navbar-logo">
-        MEGALUISFER
-      </div>
-      <div id="navbar-no-collapse" class="navbar-no-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" data-toggle="dropdown" aria-expanded="false">
-              Luisfer
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <%= yield %>
+    <section id="container">
+      <!-- header start -->
+      <header id="header" class="header fixed-top">
+        <!-- logo start -->
+        <div class="brand">
+          <%= link_to 'MEGALUISFER', home_path, class: 'logo' %>
+        </div>
+        <!-- logo end -->
+        <!--
+            TOP NAVIGATION
+        -->
+        <div class="top-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="warning-dropdown" data-toggle="dropdown" aria-expanded="false">
+                <em class="icon-bell"></em>
+                <div class="label label-danger badge">10</div>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                <span class="navbar-img">
+                    <%= image_tag 'user-icon.png', class: 'img-circle' %>
+                </span>
+                <%= current_user.name %>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" style="width: 100%">
+                <li><a>Usuarios</a></li>
+                <li><a>Cerrar Sesion</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--
+              TOP NAVIGATION END
+          -->
+        </div>
+      </header>
+      <!--
+          SIDEBAR NAVIGATION
+      -->
+      <aside>
+        <div id="sidebar">
+          <div class="leftside-navigation">
+            <ul class="sidebar-menu">
+              <li class="leftside-logo"></li>
+            </ul>
+          </div>
+        </div>
+        <!--
+            SIDEBAR NAVIGATION END
+        -->
+      </aside>
+      <%= yield %>
+    </section>
   </body>
 </html>
