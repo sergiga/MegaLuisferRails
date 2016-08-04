@@ -124,6 +124,22 @@ a.logo {
       text-align: center;
       border-bottom: 10px solid #E74C3C !important;
     }
+
+    .sidebar-buttons a {
+      color: #84888D;
+      display: block;
+      padding: 14px 0px 14px 35px;
+      font-size: 18px;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .sidebar-buttons .icon-arrow-right {
+      float: right;
+      font-size: 12px;
+      padding-top: 6px;
+      padding-right: 20px;
+    }
   }
 }
 
