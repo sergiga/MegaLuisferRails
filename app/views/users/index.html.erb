@@ -12,6 +12,7 @@
           <thead>
             <tr>
               <th>Nombre</th>
+              <th>Telefono</th>
               <th>Email</th>
               <th>Status</th>
               <th></th>
@@ -22,8 +23,9 @@
               <% @users.each do |user| %>
                 <tr>
                   <td><%= user.name %></td>
+                  <td><%= user.telephone %></td>
                   <td><%= user.email %></td>
-                  <td>Admin</td>
+                  <td><%= user.admin? %></td>
                   <td>
                     <%= link_to "", user, method: :delete,
                                           data: { confirm: "¿Estas seguro de borrar a " + user.name + "?"},
