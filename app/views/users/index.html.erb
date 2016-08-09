@@ -25,7 +25,9 @@
                   <td><%= user.email %></td>
                   <td>Admin</td>
                   <td>
-                    <%= link_to "", edit_user_path(user), class: "table-icon icon-trash" %>
+                    <%= link_to "", user, method: :delete,
+                                          data: { confirm: "¿Estas seguro de borrar a " + user.name + "?"},
+                                          class: "table-icon icon-trash" %>
                     <%= link_to "", edit_user_path(user), class: "table-icon icon-pencil" %>
                   </td>
                 </tr>
