@@ -1,6 +1,6 @@
 html, body {
+  color: #767676;
   &.pages {
-    color: #767676;
     background: #F1F2F2;
     font-family: 'Open Sans',sans-serif;
     padding: 0px !important;
@@ -9,6 +9,23 @@ html, body {
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #555;
+    margin-top: 5px;
+    text-shadow: none;
+    font-weight: normal;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 27px;
+}
+
+h5 {
+    line-height: 21px;
 }
 
 #container {
@@ -122,7 +139,7 @@ a.logo {
       color: #fff;
       height: 175px;
       text-align: center;
-      border-bottom: 10px solid #E74C3C !important;
+      border-bottom: 10px solid #496683 !important;
     }
 
     .sidebar-buttons a {
@@ -140,6 +157,63 @@ a.logo {
       padding-top: 6px;
       padding-right: 20px;
     }
+  }
+}
+
+#main-content {
+  margin-left: 240px;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.wrapper {
+  display: inline-block;
+  margin-top: 0px;
+  padding: 87px 27px 0px;
+  width: 100%;
+}
+
+.top-page-header {
+    background: white;
+    margin-top: 0px;
+    margin-bottom: 22px !important;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 11px;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.widget {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+
+  .widget-header {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .widget-content {
+    padding: 20px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+      margin-top: 0px;
+      margin-bottom: 0px;
   }
 }
 

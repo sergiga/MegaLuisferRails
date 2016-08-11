@@ -1,0 +1,73 @@
+$labelWidth: 58px;
+
+.switch {
+  margin: 0 4px 20px;
+  height: 26px;
+  width: $labelWidth * 2 + 4px;
+  background: #fff;
+  border-radius: 0px;
+  -webkit-appearance: textfield;
+    background-color: white;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    cursor: auto;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+}
+
+.switch-indent {
+  margin-left: 20%;
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: $labelWidth !important;
+  line-height: 23px;
+  font-size: 11px;
+  text-align: center !important;
+  cursor: pointer;
+  padding: 0 !important;
+  &:active { font-weight: bold; }
+}
+
+.switch-label-off { padding-left: 2px; }
+.switch-label-on { padding-right: 2px; }
+
+.switch-input {
+  display: none;
+
+  &:checked + .switch-label {
+    font-weight: bold;
+    color: white;
+    -webkit-transition: .15s ease-out;
+       -moz-transition: .15s ease-out;
+         -o-transition: .15s ease-out;
+            transition: .15s ease-out;
+  }
+
+  &:checked + .switch-label-on ~ .switch-selection {
+    left: $labelWidth;
+  }
+}
+
+.switch-selection {
+  display: block;
+  position: relative;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: $labelWidth;
+  height: 22px;
+  background: #337ab7;
+  border-radius: 0;
+  -webkit-transition: left .15s ease-out;
+     -moz-transition: left .15s ease-out;
+       -o-transition: left .15s ease-out;
+          transition: left .15s ease-out;
+}

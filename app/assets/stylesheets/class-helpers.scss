@@ -1,0 +1,40 @@
+@import 'bootstrap';
+
+.bg-white {
+    background: #ffffff !important;
+    color: inherit;
+}
+
+.btn-flat {
+  border-radius: 0px;
+  width: auto;
+}
+
+.btn-form {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.field_with_errors {
+  @extend .has-error;
+  display: inline;
+  input {
+    border-width: thin;
+    border-style: solid;
+    border-color: red;
+  }
+}
+
+.table > tbody > tr > td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.table>thead>tr>th {
+    border-bottom: 2px solid #ddd;
+}
+
+.table-icon {
+  float: right;
+  margin: 3px 8px;
+}

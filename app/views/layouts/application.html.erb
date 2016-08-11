@@ -38,7 +38,7 @@
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" style="width: 100%">
-                <li><a>Usuarios</a></li>
+                <li><%= link_to 'Usuarios', users_path %></li>
                 <li><%= link_to 'Cerrar sesion', logout_path, method: :delete %></li>
               </ul>
             </li>
@@ -70,7 +70,23 @@
             SIDEBAR NAVIGATION END
         -->
       </aside>
-      <%= yield %>
+      <!--
+          MAIN CONTENT
+      -->
+      <section id="main-content">
+        <section class="wrapper">
+          <div class="top-page-header">
+            <div class="page-title">
+              <h2><%= yield(:title) %></h2>
+              <small><%= yield(:description) %></small>
+            </div>
+            <div class="page-breadcrum">
+
+            </div>
+          </div>
+          <%= yield %>
+        </section>
+      </section>
     </section>
   </body>
 </html>
