@@ -7,7 +7,7 @@
         <h3>USUARIOS REGISTRADOS</h3>
       </div>
       <div class="widget-content bg-white">
-        <%= link_to "Nuevo usuario", new_user_path,class: "btn btn-primary btn-flat btn-new-user" %>
+        <%= link_to "Nuevo usuario", new_user_path, class: "btn btn-primary btn-flat btn-new-user" %>
         <table class="table" style="width:100%">
           <thead>
             <tr>
@@ -25,7 +25,8 @@
                   <td><%= user.name %></td>
                   <td><%= user.telephone %></td>
                   <td><%= user.email %></td>
-                  <td><%= user.admin? %></td>
+                  <td><div class="box-status" style=<%= "background-color:#D9534F;" if user.admin? %>>
+                    <%= user.admin? ? "Admin" : "User" %><div></td>
                   <td>
                     <%= link_to "", user, method: :delete,
                                           data: { confirm: "¿Estas seguro de borrar a " + user.name + "?"},
