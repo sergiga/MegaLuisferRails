@@ -20,6 +20,9 @@
           <%= f.label :name, 'Nombre' %>
           <%= f.text_field :name %></br>
 
+          <%= f.label :telephone, 'Telefono' %>
+          <%= f.text_field :telephone %></br>
+
           <%= f.label :email %>
           <%= f.email_field :email %></br>
 
@@ -39,6 +42,16 @@
 
           <%= f.label :password_confirmation, "Confirmacion" %>
           <%= f.password_field :password_confirmation %></br>
+
+          <div class="switch-indent">
+            <div class="switch">
+              <%= f.radio_button :admin, false, class: "switch-input", checked: true, id: "false" %>
+              <label for="false" class="switch-label switch-label-off">User</label>
+              <%= f.radio_button :admin, true, class: "switch-input", id: "true" %>
+              <label for="true" class="switch-label switch-label-on">Admin</label>
+              <span class="switch-selection"></span>
+            </div>
+          </div>
 
           <div class="btn-separator">
             <%= f.submit "Guardar cambios", class: "btn btn-primary btn-flat" %>
