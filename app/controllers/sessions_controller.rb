@@ -26,7 +26,8 @@ class SessionsController < ApplicationController
   end
 
   private
-    def check_authenticate
-      redirect_to home_path if logged_in?
-    end
+
+  def check_authenticate
+    redirect_to home_path if logged_in?
+  end
 end
