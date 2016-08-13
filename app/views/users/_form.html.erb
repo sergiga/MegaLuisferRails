@@ -1,0 +1,50 @@
+<%= form_for(@user) do |f| %>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información personal</strong>
+    </span>
+  <h5>
+
+  <div class="separator-form"><div>
+
+  <%= f.label :name, 'Nombre' %>
+  <%= f.text_field :name %></br>
+
+  <%= f.label :telephone, 'Telefono' %>
+  <%= f.text_field :telephone %></br>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %></br>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información de usuario</strong>
+    </span>
+  <h5>
+
+  <div class="separator-form"><div>
+
+  <%= f.label :username, 'Nombre de usuario' %>
+  <%= f.text_field :username %></br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %></br>
+
+  <%= f.label :password_confirmation, "Confirmacion" %>
+  <%= f.password_field :password_confirmation %></br>
+
+  <div class="switch-indent">
+    <div class="switch">
+      <%= f.radio_button :admin, false, class: "switch-input", checked: true, id: "false" %>
+      <label for="false" class="switch-label switch-label-off">User</label>
+      <%= f.radio_button :admin, true, class: "switch-input", id: "true" %>
+      <label for="true" class="switch-label switch-label-on">Admin</label>
+      <span class="switch-selection"></span>
+    </div>
+  </div>
+
+  <div class="btn-separator">
+    <%= f.submit submit_label, class: "btn btn-primary btn-flat" %>
+  </div>
+<% end %>
