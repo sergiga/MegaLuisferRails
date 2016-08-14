@@ -1,6 +1,7 @@
 class CreateBills < ActiveRecord::Migration[5.0]
   def change
     create_table :clients do |t|
+      t.integer :bill_id
       t.string :name, null: false
       t.string :surname
       t.string :email
@@ -11,6 +12,7 @@ class CreateBills < ActiveRecord::Migration[5.0]
 
     create_table :bills do |t|
       t.integer :client_id
+      t.integer :repair_id
       t.float :total_price
 
       t.timestamps
@@ -25,7 +27,9 @@ class CreateBills < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
+    add_index :clients, :bill_id
     add_index :bills, :client_id
+    add_index :bills, :repair_id
     add_index :repairs, :bill_id
   end
 end

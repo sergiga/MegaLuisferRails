@@ -1,3 +1,4 @@
 class Repair < ApplicationRecord
-  belongs_to :bill
+  has_one :bill
+  has_one :client, through: :bill
 end
