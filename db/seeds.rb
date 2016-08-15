@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Admin user.
 User.create(
   name: "Alejandro Alonso Taratiel",
   username: "admin",
@@ -15,6 +16,18 @@ User.create(
   telephone: "654821719"
 )
 
+# Phone brands
+PhoneBrand.create(brand: "BQ")
+PhoneBrand.create(brand: "IPhone")
+PhoneBrand.create(brand: "Lg")
+PhoneBrand.create(brand: "Motorola")
+PhoneBrand.create(brand: "Samsung")
+PhoneBrand.create(brand: "Sony")
+PhoneBrand.create(brand: "Xiaomi")
+
+# -------------- FAKE DATA --------------
+
+# Fake clients, bills and repairs.
 4.times do
   client =
     Client.create(
@@ -31,6 +44,16 @@ User.create(
     bill.repairs.create(
       status: 0,
       description: Faker::Lorem.sentence(10)
+    )
+  end
+end
+
+# Fake phones models
+PhoneBrand.all.each do |pb|
+  3.times do
+    pb.phones.create(
+    model: Faker::Name.name,
+    model_review: Faker::Lorem.word
     )
   end
 end
