@@ -5,7 +5,7 @@ class CreateComponentDescs < ActiveRecord::Migration[5.0]
     	t.string :brand
     	t.string :model
     	t.text :features
-    	t.integer :alert, 0
+    	t.integer :alert, default: 0
 
       t.timestamps
     end

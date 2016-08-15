@@ -17,10 +17,9 @@ ActiveRecord::Schema.define(version: 20160814173710) do
     t.string   "brand"
     t.string   "model"
     t.text     "features"
-    t.integer  "alert"
-    t.integer  "0"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "alert",         default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "components", force: :cascade do |t|
