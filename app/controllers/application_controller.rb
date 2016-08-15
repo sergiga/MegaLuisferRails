@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   	@components_descriptions.each do |c|
   		@component_count = c.alert
   		@alert_count += 1 if c.components.count <= @component_count
-  		
   	end
   end
 end

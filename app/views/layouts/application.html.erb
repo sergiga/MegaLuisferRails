@@ -26,7 +26,7 @@
             <li class="dropdown">
               <a href="#" class="warning-dropdown" data-toggle="dropdown" aria-expanded="false">
                 <em class="icon-bell"></em>
-                <div class="label label-danger badge"><%= @alert_count %></div>
+                <div class="label badge <%= "hidden" if @alert_count < 3 %>"><%= @alert_count %></div>
               </a>
             </li>
             <li class="dropdown">
