@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809170201) do
+ActiveRecord::Schema.define(version: 20160814173710) do
+
+  create_table "component_descs", force: :cascade do |t|
+    t.integer  "componentType"
+    t.string   "brand"
+    t.string   "model"
+    t.text     "features"
+    t.integer  "alert"
+    t.integer  "0"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "components", force: :cascade do |t|
+    t.integer  "component_desc_id"
+    t.integer  "status"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["component_desc_id"], name: "index_components_on_component_desc_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
