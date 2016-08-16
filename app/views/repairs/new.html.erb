@@ -3,19 +3,20 @@
 
 <div class="f-panel">
   <div class="f-header bg-info">
-    Información del cliente
-    <%= button_tag  do %>
+    Buscar cliente
+    <%= button_tag do %>
       <em class="icon-magnifier"></em>
     <% end %>
     <%= text_field_tag :search, params[:search] %>
   </div>
   <div class="f-content bg-white">
-    <div id="client-search-info">
+    <div id="client-search-info" class="hidden">
       <% client = Client.find(1) %>
       Nombre: <%= client.name %></br>
       Direccion: <%= client.address %></br>
       Telefono de contacto: <%= client.contact_phone %></br>
       CIF/DNI: <%= client.cif_dni %></br>
     </div>
+    <%= render partial: "client-form", locals: {client: @client} %>
   </div>
 </div>

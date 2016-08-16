@@ -1,0 +1,32 @@
+<%= form_for (client) do |f| %>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información del cliente</strong>
+    </span>
+  <h5>
+
+  <div class="separator-form"><div>
+
+  <%= f.label :cif_dni, 'CIF/DNI' %>
+  <%= f.text_field :cif_dni %></br>
+
+  <%= f.label :name, 'Nombre' %>
+  <%= f.text_field :name  %></br>
+
+  <%= f.label :address %>
+  <%= f.email_field :address %></br>
+
+  <%= f.label :contact_phone %>
+  <%= f.email_field :contact_phone %></br>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información de la reparacion</strong>
+    </span>
+  <h5>
+
+  <div class="btn-separator">
+    <%= f.submit "Registrar reparacion", class: "btn btn-primary btn-flat" %>
+  </div>
+<% end %>
