@@ -1,0 +1,27 @@
+form {
+  label {
+    font-weight: lighter;
+    text-align: right;
+    padding-right: 10px;
+    width: 20%;
+  }
+
+  input[type="text"], [type="email"], [type="password"] {
+    margin-bottom: 19px;
+    height: 34px;
+    width: 55%;
+    padding-left: 10px;
+  }
+
+  input[type="checkbox"] {
+    background-color: #fff;
+    margin-bottom: 21px;
+    top: 2px;
+    position: relative;
+  }
+
+  .btn-separator {
+    margin-left: 20%;
+    padding-left: 4px;
+  }
+}
