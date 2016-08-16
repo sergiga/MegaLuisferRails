@@ -1,0 +1,38 @@
+.f-panel {
+  .f-header {
+    font-size: 24px;
+    padding: 20px;
+
+    input[type="text"] {
+      margin-right: -6px;
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+
+    button[type="submit"],
+    input[type="text"] {
+      color: #767676;
+      background: #F1F2F2;
+      font-size: 18px;
+      border: none;
+      height: 30px;
+      margin-top: 2px;
+      float: right;
+
+      em {
+        border-left: 1px solid #767676;
+        margin-top: 4px;
+        padding-left: 6px;
+        vertical-align: middle;
+      }
+    }
+
+    input:hover, input:focus, input:active {
+      border: none;
+      outline: none;
+    }
+  }
+  .f-content {
+    padding: 20px;
+  }
+}
