@@ -24,10 +24,20 @@
         <div class="top-navbar">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
+            <!--empiezo aqui -->
               <a href="#" class="warning-dropdown" data-toggle="dropdown" aria-expanded="false">
                 <em class="icon-bell"></em>
                 <div class="label badge <%= "hidden" if @alert_count < 3 %>"><%= @alert_count %></div>
+                <span class="caret"></span>
               </a>
+              <ul class="dropdown-menu" style="width: 100%">
+                <li>Stock A</li>
+                <li>Stock B</li>
+                <li>Stock C</li>
+                <hr>
+                <li>Ver todos</li>
+              </ul>
+              <!--termino aqui -->
             </li>
             <li class="dropdown">
               <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
