@@ -7,10 +7,12 @@ class ApplicationController < ActionController::Base
   def check_stock
   	@components_descriptions = ComponentDesc.all
   	@alert_count = 0
-
-  	@components_descriptions.each do |c|
+    @low_components = []
+  	
+    @components_descriptions.each do |c|
   		@component_count = c.alert
   		@alert_count += 1 if c.components.count <= @component_count
+      @low_components.push(c) if c.components.count <= @component_count
   	end
   end
 end
