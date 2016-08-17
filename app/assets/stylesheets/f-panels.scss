@@ -3,28 +3,37 @@
     font-size: 24px;
     padding: 20px;
 
-    input[type="text"] {
-      margin-right: -6px;
-      padding-left: 10px;
-      padding-right: 5px;
+    .panel-header-search {
+      float: right;
     }
 
-    button[type="submit"],
-    input[type="text"] {
+    button#search,
+    input#search{
       color: #767676;
       background: #F1F2F2;
       font-size: 18px;
       border: none;
       height: 30px;
+      padding-top: 6px;
       margin-top: 2px;
-      float: right;
+      vertical-align: top;
 
       em {
         border-left: 1px solid #767676;
-        margin-top: 4px;
         padding-left: 6px;
-        vertical-align: middle;
+        padding-right: 6px;
       }
+    }
+
+    input#search {
+      margin-right: -8px;
+      padding-left: 10px;
+      padding-right: 5px;
+      width: auto;
+    }
+
+    button#search {
+      padding-right: 0px;
     }
 
     input:hover, input:focus, input:active {
@@ -34,5 +43,11 @@
   }
   .f-content {
     padding: 20px;
+    display: none;
+    width: 100%;
+
+    div#client-search-info {
+      display: none;
+    }
   }
 }
