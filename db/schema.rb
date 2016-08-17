@@ -14,23 +14,19 @@ ActiveRecord::Schema.define(version: 20160815152600) do
 
   create_table "bills", force: :cascade do |t|
     t.integer  "client_id"
-    t.integer  "repair_id"
     t.float    "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_bills_on_client_id"
-    t.index ["repair_id"], name: "index_bills_on_repair_id"
   end
 
   create_table "clients", force: :cascade do |t|
-    t.integer  "bill_id"
     t.string   "cif_dni",       null: false
     t.string   "name",          null: false
     t.string   "address"
     t.string   "contact_phone"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["bill_id"], name: "index_clients_on_bill_id"
   end
 
   create_table "phone_brands", force: :cascade do |t|

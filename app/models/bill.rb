@@ -1,4 +1,4 @@
 class Bill < ApplicationRecord
-  has_one :client
+  belongs_to :client
   has_many :repairs
 end

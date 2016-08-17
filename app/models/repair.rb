@@ -1,5 +1,4 @@
 class Repair < ApplicationRecord
-  has_one :bill
-  has_one :client, through: :bill
+  belongs_to :bill
   has_one :phone
 end
