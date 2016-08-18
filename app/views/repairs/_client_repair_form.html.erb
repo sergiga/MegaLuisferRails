@@ -1,0 +1,37 @@
+<h5 class="widget-subsection">
+  <span class="bottom-border-clr">
+    <strong>Información del cliente</strong>
+  </span>
+</h5>
+
+<div id="client-search-info">
+  Nombre: <%= @client.name %></br>
+  Direccion: <%= @client.address %></br>
+  Telefono de contacto: <%= @client.contact_phone %></br>
+  CIF/DNI: <%= @client.cif_dni %></br>
+</div>
+
+<%= form_for(@client) do |f| %>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información de la reparacion</strong>
+    </span>
+  </h5>
+
+  <div class="separator-form"><div>
+
+  <%= fields_for :repairs do |repairs_form| %>
+    <%= repairs_form.label :description, 'Avería' %>
+    <%= repairs_form.text_field :description %></br>
+  <% end %>
+
+  <%= fields_for :bills do |bills_form| %>
+    <%= bills_form.label :price, 'Precio' %>
+    <%= bills_form.text_field :price %></br>
+  <% end %>
+
+  <div class="btn-separator">
+    <%= f.submit "Registrar reparacion", class: "btn btn-primary btn-flat" %>
+  </div>
+<% end %>

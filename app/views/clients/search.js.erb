@@ -1,7 +1,0 @@
-<% if @client.new_record? %>
-  $('div#repair-client-form')
-    .append("<%= escape_javascript render(partial: 'repairs/client-form', locals: {client: @client}) %>")
-<% else %>
-  $('div#client-search-info').show()
-<% end %>
-$('div#panel-search-content').slideDown(600)

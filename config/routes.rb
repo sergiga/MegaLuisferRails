@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :users
   resources :clients do
     get :repairs, on: :member
-    get :search, on: :collection
   end
-  resources :repairs
+  resources :repairs do
+    get :search_client, on: :collection
+  end
 end

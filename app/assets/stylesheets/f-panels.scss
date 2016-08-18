@@ -36,7 +36,8 @@
       padding-right: 0px;
     }
 
-    input:hover, input:focus, input:active {
+    input:hover, input:focus, input:active,
+    button:hover, button:focus, button:active {
       border: none;
       outline: none;
     }
@@ -47,7 +48,8 @@
     width: 100%;
 
     div#client-search-info {
-      display: none;
+      line-height: 21px;
+      font-size: 14px;
     }
   }
 }

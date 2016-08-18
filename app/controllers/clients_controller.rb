@@ -1,9 +1,17 @@
 class ClientsController < ApplicationController
-  def search
-    @client = Client.find_by(cif_dni: params[:search]) || Client.new
-    respond_to do |format|
-      format.html { redirect_to home_path }
-      format.js
-    end
+  def create
+    @client = Client.create(client_repair_params)
+    redirect_to home_path
+  end
+
+  private
+  def client_repair_params
+    params.require(:client).permit(
+      :cif_dni,
+      :name,
+      :address,
+      :contact_phone,
+      bills_attributes: [:price, repairs_attributes: [:description]]
+    )
   end
 end
