@@ -1,0 +1,37 @@
+<% provide(:title, 'Descripción de componentes.') %>
+<% provide(:description, 'Página principal de componentes.') %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="widget">
+      <div class="widget-header bg-white">
+        <h3>Lista de componentes</h3>
+      </div>
+      <div class="widget-content bg-white">
+      	<table class="table" style="width:100%">
+      		<thead>
+      			<tr>
+      				<th>Tipo</th>
+      				<th>Marca</th>
+      				<th>Modelo</th>
+      				<th>Descripción</th>
+      				<th>Cantidad</th>
+      			</tr>
+      		</thead>
+      		<tbody>
+      			<tr>
+      				<% @component_descs.each do |component_desc| %>
+      					<tr>
+      						<td><%= component_desc.componentType %></td>
+      						<td><%= component_desc.brand %></td>
+      						<td><%= component_desc.model %></td>
+      						<td><%= component_desc.features %></td>
+      						<td><%= component_desc.alert %></td>
+      					</tr>
+      				<% end %>
+      			</tr>
+      		</tbody>
+      	</table>
+      </div>
+    </div>
+  </div>
+</div>
