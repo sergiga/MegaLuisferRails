@@ -1,7 +1,11 @@
 class ClientsController < ApplicationController
   def create
-    @client = Client.create(client_repair_params)
-    redirect_to home_path
+    @client = Client.new(client_repair_params)
+    if @client.save
+      redirect_to home_path
+    else
+      render 'repairs/new'
+    end
   end
 
   private

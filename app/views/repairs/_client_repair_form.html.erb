@@ -11,25 +11,23 @@
   CIF/DNI: <%= @client.cif_dni %></br>
 </div>
 
-<%= form_for(@client) do |f| %>
+<%= form_for([@client, @bill]) do |f| %>
 
   <h5 class="widget-subsection">
     <span class="bottom-border-clr">
       <strong>Información de la reparacion</strong>
     </span>
-  </h5>
+  <h5>
 
   <div class="separator-form"><div>
 
-  <%= fields_for :repairs do |repairs_form| %>
-    <%= repairs_form.label :description, 'Avería' %>
-    <%= repairs_form.text_field :description %></br>
-  <% end %>
+    <%= f.label :price, 'Precio' %>
+    <%= f.text_field :price %></br>
 
-  <%= fields_for :bills do |bills_form| %>
-    <%= bills_form.label :price, 'Precio' %>
-    <%= bills_form.text_field :price %></br>
-  <% end %>
+    <%= f.fields_for :repairs do |repairs_form| %>
+      <%= repairs_form.label :description, 'Avería' %>
+      <%= repairs_form.text_field :description %></br>
+    <% end %>
 
   <div class="btn-separator">
     <%= f.submit "Registrar reparacion", class: "btn btn-primary btn-flat" %>
