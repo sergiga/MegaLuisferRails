@@ -1,0 +1,29 @@
+<%= form_for(@component_desc) do |f| %>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Detalles del componente</strong>
+    </span>
+  <h5>
+
+  <div class="separator-form"><div>
+
+  <%= f.label :componentType, 'Tipo' %>
+  <%= f.text_field :componentType %></br>
+
+  <%= f.label :brand, 'Marca' %>
+  <%= f.text_field :brand %></br>
+
+  <%= f.label :model, 'Modelo' %>
+  <%= f.text_field :model %></br>
+
+  <%= f.label :features, 'Caraterísticas' %>
+  <%= f.text_field :features %></br>
+
+  <%= f.label :alert, 'Cantidad' %>
+  <%= f.text_field :alert %></br>
+
+  <div class="btn-separator">
+    <%= f.submit submit_label, class: "btn btn-primary btn-flat" %>
+  </div>
+<% end %>

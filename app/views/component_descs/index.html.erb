@@ -7,6 +7,7 @@
         <h3>Lista de componentes</h3>
       </div>
       <div class="widget-content bg-white">
+      <%= link_to "Nuevo componente", new_component_desc_path, class: "btn btn-primary btn-flat btn-new-user" %>
       	<table class="table" style="width:100%">
       		<thead>
       			<tr>
@@ -26,6 +27,7 @@
       						<td><%= component_desc.model %></td>
       						<td><%= component_desc.features %></td>
       						<td><%= component_desc.alert %></td>
+                  <td><%= link_to "", edit_component_desc_path(component_desc), class: "table-icon icon-pencil" %></td>
       					</tr>
       				<% end %>
       			</tr>
