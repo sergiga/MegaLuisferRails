@@ -30,6 +30,11 @@ class ComponentDescsController < ApplicationController
 		end
 	end
 
+	def destroy
+		ComponentDesc.find(params[:id]).destroy
+		redirect_to component_descs_path
+	end
+
 	private
 	def component_params
 		params.require(:component_desc).permit(:componentType, :brand, :model, :features, :alert)

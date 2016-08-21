@@ -27,7 +27,11 @@
       						<td><%= component_desc.model %></td>
       						<td><%= component_desc.features %></td>
       						<td><%= component_desc.alert %></td>
-                  <td><%= link_to "", edit_component_desc_path(component_desc), class: "table-icon icon-pencil" %></td>
+                  <td><%= link_to "", component_desc, method: :delete,
+                                                      data: { confirm: "¿Estas seguro de borrar " + component_desc.model + "?"},
+                                                      class: "table-icon icon-trash" %>
+                      <%= link_to "", edit_component_desc_path(component_desc), class: "table-icon icon-pencil" %>   
+                  </td>
       					</tr>
       				<% end %>
       			</tr>
