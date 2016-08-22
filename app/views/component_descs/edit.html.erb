@@ -1,0 +1,14 @@
+<% provide(:title, 'Editar descripción de componente') %>
+<% provide(:description, 'Cambie los valores que quiera en el formulario.') %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="widget">
+      <div class="widget-header bg-white">
+        <h3>FORMULARIO DE EDICION</h3>
+      </div>
+      <div class="widget-content bg-white">
+        <%= render partial: "form", object: @component_desc, locals: { submit_label: "Guardar cambios" } %>
+      </div>
+    </div>
+  </div>
+</div>

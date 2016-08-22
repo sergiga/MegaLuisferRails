@@ -26,8 +26,16 @@
             <li class="dropdown">
               <a href="#" class="warning-dropdown" data-toggle="dropdown" aria-expanded="false">
                 <em class="icon-bell"></em>
-                <div class="label label-danger badge">10</div>
+                <div class="label badge <%= "hidden" if @alert_count < 0 %>"><%= @alert_count %></div>
+                <span class="caret"></span>
               </a>
+              <ul class="dropdown-menu" style="width: 100%">
+                <li><%= @low_components[0].brand + " " + @low_components[0].model if @low_components[0] != nil %></li>
+                <li><%= @low_components[1].brand + " " + @low_components[1].model if @low_components[1] != nil %></li>
+                <li><%= @low_components[2].brand + " " + @low_components[2].model if @low_components[2] != nil %></li>
+                <hr>
+                <li>Ver todos</li>
+              </ul>
             </li>
             <li class="dropdown">
               <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
@@ -60,6 +68,13 @@
                 <%= link_to home_path do %>
                   <span class="icon-screen-desktop"></span>
                   <span>Menu</span>
+                  <span class="icon-arrow-right"></span>
+                <% end %>
+              </li>
+              <li class="sidebar-buttons">
+                <%= link_to component_descs_path do %>
+                  <span class="icon-organization"></span>
+                  <span>Descripción de componentes</span>
                   <span class="icon-arrow-right"></span>
                 <% end %>
               </li>
