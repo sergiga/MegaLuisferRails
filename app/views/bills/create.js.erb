@@ -1,0 +1,12 @@
+<% if @bill.new_record? %>
+  <% if @bill.errors[:price].any? %>
+    $('#bill_price').css('border-color', '#DD4B39')
+    $('#bill_price_error').text("<%= escape_javascript(@bill.errors[:price].first).html_safe %>");
+  <% end %>
+  <% if @bill.errors[:"repairs.description"].any?  %>
+    $('#bill_repairs_attributes_0_description').css('border-color', '#DD4B39')
+    $('#repair_description_error').text("<%= escape_javascript(@bill.errors[:"repairs.description"].first).html_safe %>");
+  <% end %>
+<% else %>
+  <%= escape_javascript(render home_path) %>
+<% end %>

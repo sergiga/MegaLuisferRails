@@ -1,33 +1,3 @@
-html, body {
-  color: #767676;
-  &.pages {
-    background: #F1F2F2;
-    font-family: 'Open Sans',sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
-    font-size: 13px;
-    text-rendering: optimizeLegibility;
-    overflow-x: hidden;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #555;
-    margin-top: 5px;
-    text-shadow: none;
-    font-weight: normal;
-    font-family: "Open Sans", Arial, sans-serif;
-}
-
-h3 {
-    font-size: 20px;
-    line-height: 27px;
-}
-
-h5 {
-    line-height: 21px;
-}
-
 #container {
   width: 100%;
   height: 100%;

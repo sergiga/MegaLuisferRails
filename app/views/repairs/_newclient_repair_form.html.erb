@@ -1,0 +1,50 @@
+<%= form_for(@client, remote: true) do |f| %>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información del cliente</strong>
+    </span>
+  </h5>
+
+  <div class="separator-form"><div>
+
+  <%= f.label :cif_dni, 'CIF/DNI' %>
+  <%= f.text_field :cif_dni, class: 'form-control' %>
+  <label id="client_cif_dni_error"></label></br>
+
+  <%= f.label :name, 'Nombre' %>
+  <%= f.text_field :name, class: 'form-control'  %>
+  <label id="client_name_error"></label></br>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control' %>
+  <label id="client_address_error"></label></br>
+
+  <%= f.label :contact_phone %>
+  <%= f.text_field :contact_phone, class: 'form-control' %>
+  <label id="client_contact_phone_error"></label></br>
+
+  <h5 class="widget-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información de la reparacion</strong>
+    </span>
+  <h5>
+
+  <div class="separator-form"><div>
+
+  <%= f.fields_for :bills do |bills_form| %>
+    <%= bills_form.label :price, 'Precio' %>
+    <%= bills_form.text_field :price, class: 'form-control' %>
+    <label id="bill_price_error"></label></br>
+
+    <%= bills_form.fields_for :repairs do |repairs_form| %>
+      <%= repairs_form.label :description, 'Avería' %>
+      <%= repairs_form.text_field :description, class: 'form-control' %>
+      <label id="repair_description_error"></label></br>
+    <% end %>
+  <% end %>
+
+  <div class="btn-separator">
+    <%= f.submit "Registrar reparacion", class: "btn btn-primary btn-flat" %>
+  </div>
+<% end %>

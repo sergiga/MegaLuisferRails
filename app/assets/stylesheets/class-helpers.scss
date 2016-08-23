@@ -1,5 +1,33 @@
 @import 'bootstrap';
 
+html, body {
+  color: #767676;
+  background: #F1F2F2;
+  font-family: 'Open Sans',sans-serif;
+  padding: 0px !important;
+  margin: 0px !important;
+  font-size: 13px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #555;
+    margin-top: 5px;
+    text-shadow: none;
+    font-weight: normal;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 27px;
+}
+
+h5 {
+    line-height: 21px;
+}
+
 hr{
   display: block;
   margin-top: 0.5em;
@@ -13,6 +41,11 @@ hr{
 .bg-white {
     background: #ffffff !important;
     color: inherit;
+}
+
+.bg-info {
+    background-color: #5BC0DE !important;
+    color: white !important;
 }
 
 .btn-flat {
@@ -47,4 +80,11 @@ hr{
 .table-icon {
   float: right;
   margin: 3px 8px;
+}
+
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+  //border-color: #D2D6DE;
+  display: inline-block;
 }

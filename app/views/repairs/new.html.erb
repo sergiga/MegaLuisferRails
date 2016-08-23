@@ -1,0 +1,18 @@
+<% provide(:title, 'Registro Reparacion') %>
+<% provide(:description, 'Formulario para una nueva reparacion.') %>
+
+<div class="f-panel">
+  <div class="f-header bg-info">
+    Buscar cliente
+    <%= form_tag search_client_repairs_path, class: "panel-header-search", method: :get, remote: true do %>
+      <%= text_field_tag :search %>
+      <%= button_tag id: "search" do %>
+        <em class="icon-magnifier"></em>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="f-content bg-white" id="panel-search-content">
+    <div id="repair-client-form"></div>
+    <div id="client-errors"></div>
+  </div>
+</div>
