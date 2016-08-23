@@ -36,66 +36,70 @@ a:hover, a:focus {
     left: 0;
     right: 0;
     z-index: 1061;
-    background: #fff;
-    height: 60px;
+    height: 50px;
+    background-color: #3c8dbc;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    box-shadow: 0 1px 4px rgba(0,0,0,-0.84),0 1px 4px rgba(0,0,0,.20);
 }
 
-.brand {
-  background: #fff;
+.logo {
+  background-color: #367fa9;
+  color: #fff;
+  border-bottom: 0 solid transparent;
+  -webkit-transition: width .3s ease-in-out;
+  -o-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+  display: block;
   float: left;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
   width: 240px;
-  height: 60px;
-  position: relative;
-  border-bottom: 1px solid #F5EFF5;
-}
-
-a.logo {
-  font-size: 24px;
-  color: #738699;
-  float: left;
-  margin: 13px 0 0 34px;
-  text-transform: uppercase;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding: 0 15px;
+  font-weight: 300;
+  overflow: hidden;
 }
 
 .top-navbar {
-  margin-top: 0px;
-
-  .navbar-right li {
-    background-color: #fff;
-    background: transparent;
-    padding: 8px 10px;
-  }
+  float: right;
 
   .navbar-nav li.dropdown {
-      padding-bottom: 10px;
-      padding-top: 10px;
+    height: 50px;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .nav>li>a:hover, .nav>li>a:active,
+  .nav>li>a:focus, .nav .open>a,
+  .nav .open>a:hover, .nav .open>a:focus,
+  .nav>.active>a {
+    background: rgba(0,0,0,0.1);
+    color: #f6f6f6;
   }
 
   .img-circle {
-    height: 40px;
-    width: 40px;
-    overflow: hidden;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: -2px;
   }
 
-  .warning-dropdown {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .badge {
+  .label-warning {
     font-size: 10px;
     font-weight: normal;
     line-height: 13px;
     padding: 2px 6px;
     position: absolute;
     right: 0px;
-    top: -15px;
-    background-color: #d9534f;
+    top: 4px;
   }
 }
 
@@ -186,13 +190,4 @@ a.logo {
       margin-top: 0px;
       margin-bottom: 0px;
   }
-}
-
-/*
-    CUSTOM NAVBAR DROPDOWN
-*/
-.nav > li > a:hover, .nav > li > a:focus {
-    color: gray;
-    text-decoration: none;
-    background-color: #fff !important;
 }
