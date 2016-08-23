@@ -2,11 +2,7 @@ class BillsController < ApplicationController
   def create
     @client = Client.find(params.delete :client_id)
     @bill = @client.bills.new(bill_repair_params)
-    if @bill.save
-      redirect_to home_path
-    else
-      render 'repairs/new'
-    end
+    @bill.save
   end
 
   private

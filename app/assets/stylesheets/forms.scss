@@ -6,6 +6,13 @@ form {
     width: 20%;
   }
 
+  label[id] {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 0px;
+    color: #DD4B39;
+  }
+
   input[type="text"], [type="email"], [type="password"] {
     margin-bottom: 19px;
     height: 34px;

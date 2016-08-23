@@ -11,7 +11,7 @@
   CIF/DNI: <%= @client.cif_dni %></br>
 </div>
 
-<%= form_for([@client, @bill]) do |f| %>
+<%= form_for([@client, @bill], remote: true) do |f| %>
 
   <h5 class="widget-subsection">
     <span class="bottom-border-clr">
@@ -22,11 +22,13 @@
   <div class="separator-form"><div>
 
     <%= f.label :price, 'Precio' %>
-    <%= f.text_field :price %></br>
+    <%= f.text_field :price, class: 'form-control' %>
+    <label id="bill_price_error"></label></br>
 
     <%= f.fields_for :repairs do |repairs_form| %>
       <%= repairs_form.label :description, 'Avería' %>
-      <%= repairs_form.text_field :description %></br>
+      <%= repairs_form.text_field :description, class: 'form-control' %>
+      <label id="repair_description_error"></label></br></br>
     <% end %>
 
   <div class="btn-separator">
