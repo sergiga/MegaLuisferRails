@@ -32,3 +32,8 @@ form[class$="primary"] {
     padding-left: 4px;
   }
 }
+
+.form-control:focus {
+  border-color: #3c8dbc;
+  box-shadow: none;
+}
