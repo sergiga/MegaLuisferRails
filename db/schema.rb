@@ -29,6 +29,24 @@ ActiveRecord::Schema.define(version: 20160815152600) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "component_descs", force: :cascade do |t|
+    t.integer  "componentType"
+    t.string   "brand"
+    t.string   "model"
+    t.text     "features"
+    t.integer  "alert",         default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "components", force: :cascade do |t|
+    t.integer  "component_desc_id"
+    t.integer  "status"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["component_desc_id"], name: "index_components_on_component_desc_id"
+  end
+
   create_table "phone_brands", force: :cascade do |t|
     t.string   "brand",      null: false
     t.datetime "created_at", null: false

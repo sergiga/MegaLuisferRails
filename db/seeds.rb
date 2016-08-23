@@ -57,3 +57,29 @@ PhoneBrand.all.each do |pb|
     )
   end
 end
+
+description = ComponentDesc.create(
+	componentType: 0,
+	brand: Faker::Name.name,
+	model: Faker::Name.name,
+	features: Faker::ChuckNorris.fact,
+	alert: 0
+)
+description.components.create(
+	status: Faker::Number.digit
+	)
+
+2.times do
+	rng_description = ComponentDesc.create(
+		componentType: 0,
+		brand: Faker::Name.name,
+		model: Faker::Name.name,
+		features: Faker::ChuckNorris.fact,
+		alert: 2
+		)
+
+	rng_description.components.create(
+	status: Faker::Number.digit
+	)
+
+end

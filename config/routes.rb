@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :repairs do
     get :search_client, on: :collection
   end
+
+  resources :component_descs
 end
