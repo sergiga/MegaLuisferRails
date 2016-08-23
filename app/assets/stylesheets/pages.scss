@@ -75,6 +75,10 @@ a:hover, a:focus {
     }
   }
 
+  .navbar-nav .user-menu {
+    padding-right: 15px;
+  }
+  
   .nav>li>a:hover, .nav>li>a:active,
   .nav>li>a:focus, .nav .open>a,
   .nav .open>a:hover, .nav .open>a:focus,
@@ -103,27 +107,50 @@ a:hover, a:focus {
   }
 }
 
-.leftside-navigation {
+.sidebar {
+  background-color: #222d32;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  min-height: 100%;
+  width: 240px;
+  z-index: 810;
+
   .sidebar-menu {
-    padding-top: 60px;
     padding-left: 0px;
+    height: 100%;
+
+    .sidebar-header {
+      color: #4b646f;
+      background: #1a2226;
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: nowrap;
+      padding: 10px 25px 10px 15px;
+      font-size: 12px;
+    }
 
     .leftside-logo {
-      background-color: #2C3E50;
       padding: 10px;
       color: #fff;
-      height: 175px;
+      height: 80px;
       text-align: center;
-      border-bottom: 10px solid #496683 !important;
     }
 
     .sidebar-buttons a {
-      color: #84888D;
+      color: #b8c7ce;
       display: block;
-      padding: 14px 0px 14px 35px;
-      font-size: 18px;
+      padding: 12px 5px 12px 15px;
       text-decoration: none;
       position: relative;
+      border-left: 3px solid transparent;
+    }
+
+    li:hover>a, li.active>a {
+      color: #fff;
+      background: #1e282c;
+      border-left-color: #3c8dbc;
     }
 
     .sidebar-buttons .icon-arrow-right {
@@ -187,7 +214,7 @@ a:hover, a:focus {
   }
 
   h1, h2, h3, h4, h5, h6 {
-      margin-top: 0px;
-      margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }

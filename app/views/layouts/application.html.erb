@@ -59,33 +59,29 @@
       <!--
           SIDEBAR NAVIGATION
       -->
-      <aside>
-        <div id="sidebar">
-          <div class="leftside-navigation">
-            <ul class="sidebar-menu">
-              <li class="leftside-logo"></li>
-              <li class="sidebar-buttons">
-                <%= link_to home_path do %>
-                  <span class="icon-screen-desktop"></span>
-                  <span>Menu</span>
-                  <span class="icon-arrow-right"></span>
-                <% end %>
-                <%= link_to new_repair_path do %>
-                  <span class="icon-wrench"></span>
-                  <span>Nueva reparacion</span>
-                  <span class="icon-arrow-right"></span>
-                <% end %>
-              </li>
-              <li class="sidebar-buttons">
-                <%= link_to component_descs_path do %>
-                  <span class="icon-organization"></span>
-                  <span>Descripción de componentes</span>
-                  <span class="icon-arrow-right"></span>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <aside class="sidebar">
+        <ul class="sidebar-menu">
+          <li class="leftside-logo"></li>
+          <li class="sidebar-header">NAVEGACION</li>
+          <li class="sidebar-buttons">
+            <%= link_to home_path do %>
+              <span class="icon-screen-desktop"></span>
+              <span>Menu</span>
+            <% end %>
+          </li>
+          <li class="sidebar-buttons">
+            <%= link_to new_repair_path do %>
+              <span class="icon-wrench"></span>
+              <span>Nueva reparacion</span>
+            <% end %>
+          </li>
+          <li class="sidebar-buttons">
+            <%= link_to component_descs_path do %>
+              <span class="icon-organization"></span>
+              <span>Descripción de componentes</span>
+            <% end %>
+          </li>
+        </ul>
         <!--
             SIDEBAR NAVIGATION END
         -->
