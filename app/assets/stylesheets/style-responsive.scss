@@ -4,3 +4,10 @@
       padding-bottom: 0px !important;
   }
 }
+
+@media (max-width: 769px) {
+  .login-box {
+      width: 90% !important;
+      margin-top: 20px !important;
+  }
+}
