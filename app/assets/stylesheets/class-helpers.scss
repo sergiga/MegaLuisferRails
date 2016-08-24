@@ -2,6 +2,7 @@
 
 html, body {
   min-height: 100%;
+  height: 100%;
 }
 
 body {
@@ -40,14 +41,9 @@ hr{
   border-width: 1px;
 }
 
-.bg-white {
+.hd-primary {
     background: #ffffff !important;
-    color: inherit;
-}
-
-.bg-info {
-    background-color: #5BC0DE !important;
-    color: white !important;
+    border-top-color: #367fa9;
 }
 
 .btn-flat {
@@ -92,6 +88,10 @@ hr{
 .form-control {
   border-radius: 0;
   box-shadow: none;
-  //border-color: #D2D6DE;
   display: inline-block;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:active,
+input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
 }

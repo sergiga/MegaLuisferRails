@@ -61,7 +61,13 @@
       -->
       <aside class="sidebar">
         <ul class="sidebar-menu">
-          <li class="leftside-logo"></li>
+          <li class="leftside-logo">
+            <%= image_tag 'megabox-logo.png', class: 'megabox-logo' %>
+            <div class="megabox-text">
+              <b>MEGA</b>
+              box
+            </div>
+          </li>
           <li class="sidebar-header">NAVEGACION</li>
           <li class="sidebar-buttons">
             <%= link_to home_path do %>
@@ -89,20 +95,22 @@
       <!--
           MAIN CONTENT
       -->
-      <section id="main-content">
-        <section class="wrapper">
-          <div class="top-page-header">
+      <div class="content-wrapper">
+          <section class="top-page-header">
             <div class="page-title">
-              <h2><%= yield(:title) %></h2>
-              <small><%= yield(:description) %></small>
+              <h1><%= yield(:title) %></h1>
             </div>
-            <div class="page-breadcrum">
-
-            </div>
-          </div>
-          <%= yield %>
-        </section>
-      </section>
+            <ol class="breadcrum">
+              <li>
+                <span class="glyphicon glyphicon-home"></span>
+                Home
+              </li>
+            </ol>
+          </section>
+          <section class="main-content">
+            <%= yield %>
+          </section>
+      </div>
     </section>
   </body>
 </html>
