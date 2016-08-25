@@ -1,22 +1,14 @@
 $labelWidth: 58px;
 
 .switch {
-  margin: 0 4px 20px;
-  height: 26px;
+  height: 34px;
   width: $labelWidth * 2 + 4px;
   background: #fff;
   border-radius: 0px;
-  -webkit-appearance: textfield;
-    background-color: white;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    cursor: auto;
-    border-width: 2px;
-    border-style: inset;
-    border-color: initial;
+}
+
+.switch.form-control {
+  padding: 1px;
 }
 
 .switch-indent {
@@ -28,8 +20,8 @@ $labelWidth: 58px;
   z-index: 2;
   float: left;
   width: $labelWidth !important;
-  line-height: 23px;
-  font-size: 11px;
+  line-height: 30px;
+  font-size: 14px;
   text-align: center !important;
   cursor: pointer;
   padding: 0 !important;
@@ -43,7 +35,6 @@ $labelWidth: 58px;
   display: none;
 
   &:checked + .switch-label {
-    font-weight: bold;
     color: white;
     -webkit-transition: .15s ease-out;
        -moz-transition: .15s ease-out;
@@ -63,7 +54,7 @@ $labelWidth: 58px;
   top: 0px;
   left: 0px;
   width: $labelWidth;
-  height: 22px;
+  height: 30px;
   background: #337ab7;
   border-radius: 0;
   -webkit-transition: left .15s ease-out;

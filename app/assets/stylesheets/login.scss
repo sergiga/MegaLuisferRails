@@ -1,0 +1,33 @@
+.sessions {
+  background: #D2D6DE;
+  min-height: 0;
+  height: auto;
+  
+  .login-box {
+    width: 360px;
+    margin: 7% auto;
+
+    .login-box-logo {
+       margin: 25px 0;
+
+      .img-logo {
+        display: block;
+        margin: 0 auto;
+        width: 230px;
+      }
+    }
+
+    .login-box-body {
+      background: #fff;
+      padding: 20px;
+      border-top: 0;
+      color: #666;
+
+      .login-box-msg {
+        margin: 0;
+        text-align: center;
+        padding: 0 20px 20px 20px;
+      }
+    }
+  }
+}

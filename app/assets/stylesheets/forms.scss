@@ -1,22 +1,20 @@
-form {
+form[class$="primary"] {
   label {
     font-weight: lighter;
+    height: 34px;
+    margin-bottom: 0;
     text-align: right;
-    padding-right: 10px;
-    width: 20%;
+    padding-top: 7px;
   }
 
-  label[id] {
+  .form-error-display {
     text-align: left;
-    padding-left: 10px;
-    padding-right: 0px;
     color: #DD4B39;
   }
 
   input[type="text"], [type="email"], [type="password"] {
-    margin-bottom: 19px;
     height: 34px;
-    width: 55%;
+    width: 100%;
     padding-left: 10px;
   }
 
@@ -26,9 +24,13 @@ form {
     top: 2px;
     position: relative;
   }
+}
 
-  .btn-separator {
-    margin-left: 20%;
-    padding-left: 4px;
-  }
+.separator-form {
+  margin-top: 20px;
+}
+
+.form-control:focus {
+  border-color: #3c8dbc;
+  box-shadow: none;
 }

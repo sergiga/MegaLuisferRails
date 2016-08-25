@@ -7,23 +7,38 @@
     <% end %>
   </div>
 <% end %>
-<div class="container">
-  <div class="card card-container">
+<div class="login-box">
+  <div class="login-box-logo">
+    <%= image_tag 'logo-empresa.PNG', class: 'img-logo', width: '300px' %>
+  </div>
+  <div class="login-box-body">
+    <p class="login-box-msg">Inicio de sesión</p>
+
     <%= form_for(:session, url: login_path, :html => { :class => "form-signin" }) do |f| %>
 
-      <%= image_tag 'logo-empresa.PNG', class: 'img-logo', width: '300px' %>
-
-      <%= f.text_field :username, id: 'inputUsername', class: 'form-control', placeholder: 'Usuario / Email', autofocus: true %>
-
-      <%= f.password_field :password, id: 'inputPassword', class: 'form-control', placeholder: 'Contraseña' %>
-
-      <div class="checkbox">
-        <label>
-          <%= f.check_box :remember_me %> Recordar mis datos.
-        </label>
+      <div class="form-group has-feedback">
+        <%= f.text_field :username, id: 'inputUsername', class: 'form-control', placeholder: 'Usuario / Email' %>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <div class="form-group has-feedback">
+        <%= f.password_field :password, id: 'inputPassword', class: 'form-control', placeholder: 'Contraseña' %>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8">
+          <label class="control control-checkbox">
+            Recordar mis datos.
+            <%= f.check_box :remember_me %>
+            <div class="control-indicator"></div>
+          </label>
+        </div>
+
+        <div class="col-xs-4">
+          <%= f.submit "Log in", class: "btn btn-primary btn-flat btn-block" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

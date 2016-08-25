@@ -1,0 +1,77 @@
+.control {
+	position: relative;
+	display: block;
+	margin: 7px 0;
+	padding-left: 30px;
+	cursor: pointer;
+  font-weight: 400;
+}
+
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.control-indicator {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+  background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control-indicator,
+.control input:focus ~ .control-indicator {
+	background: #fff;
+}
+
+/* Checked state */
+.control input:checked ~ .control-indicator {
+  border: 1px solid #367fa9;
+	background: #367fa9;
+}
+
+/* Hover state whilst checked */
+.control:hover input:not([disabled]):checked ~ .control-indicator,
+.control input:checked:focus ~ .control-indicator {
+	background: #367fa9;
+}
+
+/* Disabled state */
+.control input:disabled ~ .control-indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: #e6e6e6;
+}
+
+/* Check mark */
+.control-indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/* Show check mark */
+.control input:checked ~ .control-indicator:after {
+	display: block;
+}
+
+/* Checkbox tick */
+.control-checkbox .control-indicator:after {
+	top: 3px;
+	left: 6px;
+	width: 6px;
+	height: 10px;
+	transform: rotate(45deg);
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.control-checkbox input:disabled ~ .control-indicator:after {
+	border-color: #7b7b7b;
+}

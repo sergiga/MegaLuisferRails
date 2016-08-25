@@ -1,14 +1,14 @@
 <% provide(:title, 'Descripción de componentes.') %>
-<% provide(:description, 'Página principal de componentes.') %>
+
 <div class="row">
   <div class="col-md-12">
-    <div class="widget">
-      <div class="widget-header bg-white">
-        <h3>Lista de componentes</h3>
+    <div class="box">
+      <div class="box-header hd-primary">
+        Descripciones
       </div>
-      <div class="widget-content bg-white">
-      <%= link_to "Nuevo componente", new_component_desc_path, class: "btn btn-primary btn-flat btn-new-user" %>
-      	<table class="table" style="width:100%">
+      <div class="box-content box-content-separator">
+      <%= link_to "Nuevo componente", new_component_desc_path, class: "btn btn-primary btn-flat btn-new-table-row" %>
+      	<table class="table table-bordered" style="width:100%">
       		<thead>
       			<tr>
       				<th>Tipo</th>
@@ -16,6 +16,7 @@
       				<th>Modelo</th>
       				<th>Descripción</th>
       				<th>Cantidad</th>
+              <th>Acción</th>
       			</tr>
       		</thead>
       		<tbody>
@@ -27,10 +28,15 @@
       						<td><%= component_desc.model %></td>
       						<td><%= component_desc.features %></td>
       						<td><%= component_desc.alert %></td>
-                  <td><%= link_to "", component_desc, method: :delete,
-                                                      data: { confirm: "¿Estas seguro de borrar " + component_desc.model + "?"},
-                                                      class: "table-icon icon-trash" %>
-                      <%= link_to "", edit_component_desc_path(component_desc), class: "table-icon icon-pencil" %>   
+                  <td class="table-btn-field-2">
+                    <%= link_to edit_component_desc_path(component_desc), class: 'table-btn pos-2' do %>
+                      <em class="icon-pencil"></em>
+                    <% end %>
+                    <%= link_to component_desc, method: :delete,
+                                          data: { confirm: "¿Estas seguro de borrar #{component_desc.model}?"},
+                                          class: 'table-btn pos-1' do %>
+                      <em class="icon-trash"></em>
+                    <% end %>
                   </td>
       					</tr>
       				<% end %>

@@ -1,29 +1,51 @@
-<%= form_for(@component_desc) do |f| %>
+<%= form_for(@component_desc, :html => {class: 'form-primary'}) do |f| %>
 
-  <h5 class="widget-subsection">
+  <h5 class="box-subsection">
     <span class="bottom-border-clr">
       <strong>Detalles del componente</strong>
     </span>
-  <h5>
+  </h5>
 
-  <div class="separator-form"><div>
+  <div class="separator-form"></div>
 
-  <%= f.label :componentType, 'Tipo' %>
-  <%= f.text_field :componentType %></br>
+  <div class="form-group row">
+    <%= f.label :componentType, 'Tipo', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :componentType, class: 'form-control' %>
+    </div>
+  </div>
 
-  <%= f.label :brand, 'Marca' %>
-  <%= f.text_field :brand %></br>
+  <div class="form-group row">
+    <%= f.label :brand, 'Marca', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :brand, class: 'form-control' %>
+    </div>
+  </div>
 
-  <%= f.label :model, 'Modelo' %>
-  <%= f.text_field :model %></br>
+  <div class="form-group row">
+    <%= f.label :model, 'Modelo', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :model, class: 'form-control' %>
+    </div>
+  </div>
 
-  <%= f.label :features, 'Caraterísticas' %>
-  <%= f.text_field :features %></br>
+  <div class="form-group row">
+    <%= f.label :features, 'Caraterísticas', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :features, class: 'form-control' %>
+    </div>
+  </div>
 
-  <%= f.label :alert, 'Cantidad' %>
-  <%= f.text_field :alert %></br>
+  <div class="form-group row">
+    <%= f.label :alert, 'Cantidad', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :alert, class: 'form-control' %>
+    </div>
+  </div>
 
-  <div class="btn-separator">
-    <%= f.submit submit_label, class: "btn btn-primary btn-flat" %>
+  <div class="form-group row">
+    <div class="col-md-9">
+        <%= f.submit submit_label, class: "btn btn-primary btn-flat pull-right" %>
+    </div>
   </div>
 <% end %>

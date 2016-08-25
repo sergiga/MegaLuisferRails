@@ -1,21 +1,21 @@
 <% provide(:title, 'Gestión de Usuarios') %>
-<% provide(:description, 'Página principal de Gestión de Usuarios.') %>
+
 <div class="row">
   <div class="col-md-12">
-    <div class="widget">
-      <div class="widget-header bg-white">
-        <h3>USUARIOS REGISTRADOS</h3>
+    <div class="box">
+      <div class="box-header hd-primary">
+        Usuarios
       </div>
-      <div class="widget-content bg-white">
-        <%= link_to "Nuevo usuario", new_user_path, class: "btn btn-primary btn-flat btn-new-user" %>
-        <table class="table" style="width:100%">
+      <div class="box-content box-content-separator">
+        <%= link_to "Nuevo usuario", new_user_path, class: "btn btn-primary btn-flat btn-new-table-row" %>
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>Nombre</th>
               <th>Telefono</th>
               <th>Email</th>
-              <th>Status</th>
-              <th></th>
+              <th>Permisos</th>
+              <th>Acción</th>
             </tr>
           </thead>
           <tbody>
@@ -25,13 +25,18 @@
                   <td><%= user.name %></td>
                   <td><%= user.telephone %></td>
                   <td><%= user.email %></td>
-                  <td><div class="box-status" style=<%= "background-color:#D9534F;" if user.admin? %>>
-                    <%= user.admin? ? "Admin" : "User" %><div></td>
-                  <td>
-                    <%= link_to "", user, method: :delete,
-                                          data: { confirm: "¿Estas seguro de borrar a " + user.name + "?"},
-                                          class: "table-icon icon-trash" %>
-                    <%= link_to "", edit_user_path(user), class: "table-icon icon-pencil" %>
+                  <td><div class= "label <%=user.admin? ? "label-danger" :"label-primary" %>">
+                    <%= user.admin? ? "Admin" : "User" %></div>
+                  </td>
+                  <td class="table-btn-field-2">
+                    <%= link_to edit_user_path(user), class: 'table-btn pos-2' do %>
+                      <em class="icon-pencil"></em>
+                    <% end %>
+                    <%= link_to user, method: :delete,
+                                          data: { confirm: "¿Estas seguro de borrar a #{user.name} ? "},
+                                          class: 'table-btn pos-1' do %>
+                      <em class="icon-trash"></em>
+                    <% end %>
                   </td>
                 </tr>
               <% end %>

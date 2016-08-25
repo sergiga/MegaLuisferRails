@@ -3,7 +3,8 @@
   <head>
     <title>MegaLuisferRails</title>
     <%= csrf_meta_tags %>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.css">
@@ -14,9 +15,12 @@
       <!-- header start -->
       <header id="header" class="header fixed-top">
         <!-- logo start -->
-        <div class="brand">
-          <%= link_to 'MEGALUISFER', home_path, class: 'logo' %>
-        </div>
+        <%= link_to home_path, class: 'logo' do %>
+          <span class="logo-lg">
+            <b>MEGA</b>
+            LUISFER
+          </span>
+        <% end %>
         <!-- logo end -->
         <!--
             TOP NAVIGATION
@@ -26,8 +30,7 @@
             <li class="dropdown">
               <a href="#" class="warning-dropdown" data-toggle="dropdown" aria-expanded="false">
                 <em class="icon-bell"></em>
-                <div class="label badge <%= "hidden" if @alert_count < 0 %>"><%= @alert_count %></div>
-                <span class="caret"></span>
+                <div class="label label-warning <%= "hidden" if @alert_count < 0 %>"><%= @alert_count %></div>
               </a>
               <ul class="dropdown-menu" style="width: 100%">
                 <li><%= @low_components[0].brand + " " + @low_components[0].model if @low_components[0] != nil %></li>
@@ -37,13 +40,10 @@
                 <li>Ver todos</li>
               </ul>
             </li>
-            <li class="dropdown">
+            <li class="dropdown user-menu">
               <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
-                <span class="navbar-img">
-                    <%= image_tag 'user-icon.png', class: 'img-circle' %>
-                </span>
+                <%= image_tag 'user-icon.png', class: 'img-circle' %>
                 <%= current_user.name %>
-                <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" style="width: 100%">
                 <li><%= link_to 'Usuarios', users_path %></li>
@@ -59,33 +59,35 @@
       <!--
           SIDEBAR NAVIGATION
       -->
-      <aside>
-        <div id="sidebar">
-          <div class="leftside-navigation">
-            <ul class="sidebar-menu">
-              <li class="leftside-logo"></li>
-              <li class="sidebar-buttons">
-                <%= link_to home_path do %>
-                  <span class="icon-screen-desktop"></span>
-                  <span>Menu</span>
-                  <span class="icon-arrow-right"></span>
-                <% end %>
-                <%= link_to new_repair_path do %>
-                  <span class="icon-wrench"></span>
-                  <span>Nueva reparacion</span>
-                  <span class="icon-arrow-right"></span>
-                <% end %>
-              </li>
-              <li class="sidebar-buttons">
-                <%= link_to component_descs_path do %>
-                  <span class="icon-organization"></span>
-                  <span>Descripción de componentes</span>
-                  <span class="icon-arrow-right"></span>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <aside class="sidebar">
+        <ul class="sidebar-menu">
+          <li class="leftside-logo">
+            <%= image_tag 'megabox-logo.png', class: 'megabox-logo' %>
+            <div class="megabox-text">
+              <b>MEGA</b>
+              box
+            </div>
+          </li>
+          <li class="sidebar-header">NAVEGACION</li>
+          <li class="sidebar-buttons">
+            <%= link_to home_path do %>
+              <span class="icon-screen-desktop"></span>
+              <span>Menu</span>
+            <% end %>
+          </li>
+          <li class="sidebar-buttons">
+            <%= link_to new_repair_path do %>
+              <span class="icon-wrench"></span>
+              <span>Nueva reparacion</span>
+            <% end %>
+          </li>
+          <li class="sidebar-buttons">
+            <%= link_to component_descs_path do %>
+              <span class="icon-organization"></span>
+              <span>Descripción de componentes</span>
+            <% end %>
+          </li>
+        </ul>
         <!--
             SIDEBAR NAVIGATION END
         -->
@@ -93,20 +95,22 @@
       <!--
           MAIN CONTENT
       -->
-      <section id="main-content">
-        <section class="wrapper">
-          <div class="top-page-header">
+      <div class="content-wrapper">
+          <section class="top-page-header">
             <div class="page-title">
-              <h2><%= yield(:title) %></h2>
-              <small><%= yield(:description) %></small>
+              <h1><%= yield(:title) %></h1>
             </div>
-            <div class="page-breadcrum">
-
-            </div>
-          </div>
-          <%= yield %>
-        </section>
-      </section>
+            <ol class="breadcrum">
+              <li>
+                <span class="glyphicon glyphicon-home"></span>
+                Home
+              </li>
+            </ol>
+          </section>
+          <section class="main-content">
+            <%= yield %>
+          </section>
+      </div>
     </section>
   </body>
 </html>

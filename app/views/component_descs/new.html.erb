@@ -1,12 +1,12 @@
 <% provide(:title, 'Nuevo Componente') %>
-<% provide(:description, 'Rellene el formulario para crear un nuevo componente.') %>
+
 <div class="row">
   <div class="col-md-12">
-    <div class="widget">
-      <div class="widget-header bg-white">
-        <h3>FORMULARIO DE COMPONENTES</h3>
+    <div class="box">
+      <div class="box-header hd-primary">
+        Descripción
       </div>
-      <div class="widget-content bg-white">
+      <div class="box-content">
         <%= render partial: "form", object: @component_descs, locals: { submit_label: "Crear componente" } %>
       </div>
     </div>
