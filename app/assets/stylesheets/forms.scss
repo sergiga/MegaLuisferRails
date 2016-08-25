@@ -3,26 +3,16 @@ form[class$="primary"] {
     font-weight: lighter;
     height: 34px;
     margin-bottom: 0;
-    float: right;
-
-    span {
-      position: absolute;
-      top: 7px;
-      right: 15px;
-    }
+    text-align: right;
+    padding-top: 7px;
   }
 
   .form-error-display {
-    span {
-      position: absolute;
-      padding: 0;
-      left: 0;
-      color: #DD4B39;
-    }
+    text-align: left;
+    color: #DD4B39;
   }
 
   input[type="text"], [type="email"], [type="password"] {
-    margin-bottom: 19px;
     height: 34px;
     width: 100%;
     padding-left: 10px;
