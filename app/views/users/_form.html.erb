@@ -1,50 +1,79 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :html => {class: 'form-primary'}) do |f| %>
 
-  <h5 class="widget-subsection">
+  <h5 class="box-subsection">
     <span class="bottom-border-clr">
       <strong>Información personal</strong>
     </span>
-  <h5>
+  </h5>
 
-  <div class="separator-form"><div>
+  <div class="separator-form"></div>
 
-  <%= f.label :name, 'Nombre' %>
-  <%= f.text_field :name %></br>
-
-  <%= f.label :telephone, 'Telefono' %>
-  <%= f.text_field :telephone %></br>
-
-  <%= f.label :email %>
-  <%= f.email_field :email %></br>
-
-  <h5 class="widget-subsection">
-    <span class="bottom-border-clr">
-      <strong>Información de usuario</strong>
-    </span>
-  <h5>
-
-  <div class="separator-form"><div>
-
-  <%= f.label :username, 'Nombre de usuario' %>
-  <%= f.text_field :username %></br>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %></br>
-
-  <%= f.label :password_confirmation, "Confirmacion" %>
-  <%= f.password_field :password_confirmation %></br>
-
-  <div class="switch-indent">
-    <div class="switch">
-      <%= f.radio_button :admin, false, class: "switch-input", checked: true, id: "false" %>
-      <label for="false" class="switch-label switch-label-off">User</label>
-      <%= f.radio_button :admin, true, class: "switch-input", id: "true" %>
-      <label for="true" class="switch-label switch-label-on">Admin</label>
-      <span class="switch-selection"></span>
+  <div class="form-group row">
+    <%= f.label :name, 'Nombre', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
   </div>
 
-  <div class="btn-separator">
-    <%= f.submit submit_label, class: "btn btn-primary btn-flat" %>
+  <div class="form-group row">
+    <%= f.label :telephone, 'Telefono', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :telephone, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :email, class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+  </div>
+
+  <h5 class="box-subsection">
+    <span class="bottom-border-clr">
+      <strong>Información de usuario</strong>
+    </span>
+  </h5>
+
+  <div class="separator-form"></div>
+
+  <div class="form-group row">
+    <%= f.label :username, 'Nombre de usuario', class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.text_field :username, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :password, class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :password_confirmation, "Confirmacion", class: 'col-md-3' %>
+    <div class="col-md-6">
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-3" style="height:34px;"></div>
+    <div class="col-md-6">
+      <div class="switch form-control">
+        <%= f.radio_button :admin, false, class: "switch-input", checked: true, id: "false" %>
+        <label for="false" class="switch-label switch-label-off">User</label>
+        <%= f.radio_button :admin, true, class: "switch-input", id: "true" %>
+        <label for="true" class="switch-label switch-label-on">Admin</label>
+        <span class="switch-selection"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-9">
+      <%= f.submit submit_label, class: "btn btn-primary btn-flat pull-right" %>
+    </div>
   </div>
 <% end %>

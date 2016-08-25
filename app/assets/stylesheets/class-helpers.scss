@@ -47,13 +47,17 @@ hr{
 }
 
 .btn-flat {
-  border-radius: 0px;
+  border-radius: 3px;
   width: auto;
 }
 
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.btn-new-table-row {
+  margin-bottom: 12px;
 }
 
 .btn-form {
@@ -69,20 +73,6 @@ hr{
     border-style: solid;
     border-color: red;
   }
-}
-
-.table > tbody > tr > td {
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.table>thead>tr>th {
-    border-bottom: 2px solid #ddd;
-}
-
-.table-icon {
-  float: right;
-  margin: 3px 8px;
 }
 
 .form-control {

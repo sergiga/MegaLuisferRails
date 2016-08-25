@@ -1,6 +1,8 @@
 .sessions {
   background: #D2D6DE;
-
+  min-height: 0;
+  height: auto;
+  
   .login-box {
     width: 360px;
     margin: 7% auto;

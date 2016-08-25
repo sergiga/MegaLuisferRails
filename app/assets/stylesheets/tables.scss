@@ -1,0 +1,38 @@
+.box-content {
+  .table {
+    margin-bottom: 0px;
+
+    tbody>tr>td>div.label {
+      display: inline-block;
+        width: 50px;
+    }
+  }
+
+  .table-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .table-btn {
+    position: absolute;
+    padding: 8px 11px;
+    &.pos-1 {
+      right: 1 * 36px;
+    }
+    &.pos-2 {
+      right: 2 * 36px;
+    }
+  }
+
+  .table-btn-field-2 {
+    width: 36 * 2px;
+    padding: 0;
+  }
+
+  .table-bordered,
+  .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th,
+  .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td,
+  .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #f4f4f4;
+  }
+}

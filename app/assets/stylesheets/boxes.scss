@@ -54,13 +54,16 @@
   .box-content {
     padding: 20px;
     padding-top: 0;
-    display: none;
     width: 100%;
 
     div#client-search-info {
       line-height: 21px;
       font-size: 14px;
     }
+  }
+
+  .box-content.box-content-separator {
+    margin-top: 20px;
   }
 
   .box-subsection {
