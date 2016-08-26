@@ -146,6 +146,20 @@ a:hover, a:focus {
         }
       }
 
+      &.user-menu {
+        li {
+          padding: 0;
+          a {
+            padding: 10px;
+            border-bottom: 1px solid #f4f4f4;
+
+            span {
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+
       .header {
         padding: 7px 10px;
         border-bottom: 1px solid #f4f4f4;
@@ -292,19 +306,6 @@ a:hover, a:focus {
   h1 {
     margin: 0;
     font-size: 24px;
-  }
-
-  .breadcrum {
-    float: right;
-    background: transparent;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    padding: 7px 0px 7px 5px;
-    top: 64px;
-    right: 20px;
-    position: absolute;;
-    list-style: none;
   }
 }
 
