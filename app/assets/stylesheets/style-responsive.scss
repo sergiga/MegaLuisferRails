@@ -1,4 +1,15 @@
 @media (max-width: 991px) {
+  .navbar-nav>li {
+    position: static;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    right: 5%;
+    left: auto;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
 
   .navbar-nav>li>a {
     padding-top: 15px;
@@ -11,5 +22,56 @@
   .login-box {
       width: 90% !important;
       margin-top: 20px !important;
+  }
+
+  .header {
+    .logo, .navbar-top {
+      width: 100%;
+      float: none;
+    }
+
+    .navbar-top {
+      margin: 0;
+
+      .navbar-nav {
+        margin: 0;
+
+        li {
+          position: static;
+          display: block;
+          float: left;
+        }
+      }
+    }
+  }
+
+  .sidebar-toggle {
+    display: block !important;
+  }
+
+  .sidebar {
+    padding-top: 100px;
+    -webkit-transform: translate(-240px, 0);
+    -ms-transform: translate(-240px, 0);
+    -o-transform: translate(-240px, 0);
+    transform: translate(-240px, 0);
+  }
+
+  .sidebar-toggle .sidebar {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .sidebar-toggle .content-wrapper {
+    -webkit-transform: translate(240px, 0);
+    -ms-transform: translate(240px, 0);
+    -o-transform: translate(240px, 0);
+    transform: translate(240px, 0);
+  }
+
+  .content-wrapper {
+    margin-left: 0;
   }
 }
