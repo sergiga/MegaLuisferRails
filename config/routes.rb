@@ -8,14 +8,14 @@ Rails.application.routes.draw do
   get     '/home',    to: 'pages#home'
 
   resources :users
-  get '/bills', to: 'bills#show_all'
-  resources :clients do
-    resources :bills
-    get :repairs, on: :member
-  end
-  resources :repairs do
+  get '/orders', to: 'orders#show_all'
+  resources :orders, only: [:new, :create] do
     get :search_client, on: :collection
   end
-
+  resources :clients do
+    resources :orders, only: [:index, :show, :edit, :update, :destroy]
+    get :repairs, on: :member
+  end
+  resources :repairs
   resources :component_descs
 end

@@ -1,5 +1,5 @@
 class Repair < ApplicationRecord
-  belongs_to :bill, inverse_of: :repairs
+  belongs_to :order, inverse_of: :repairs
   has_one :phone
 
   validates :description, presence: true

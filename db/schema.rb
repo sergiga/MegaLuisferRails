@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815152600) do
-
-  create_table "bills", force: :cascade do |t|
-    t.integer  "client_id"
-    t.float    "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_bills_on_client_id"
-  end
+ActiveRecord::Schema.define(version: 20160827150818) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "cif_dni",       null: false
@@ -47,6 +39,14 @@ ActiveRecord::Schema.define(version: 20160815152600) do
     t.index ["component_desc_id"], name: "index_components_on_component_desc_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "client_id"
+    t.float    "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_orders_on_client_id"
+  end
+
   create_table "phone_brands", force: :cascade do |t|
     t.string   "brand",      null: false
     t.datetime "created_at", null: false
@@ -63,12 +63,12 @@ ActiveRecord::Schema.define(version: 20160815152600) do
   end
 
   create_table "repairs", force: :cascade do |t|
-    t.integer  "bill_id"
+    t.integer  "order_id"
     t.integer  "status",      default: 0
     t.text     "description"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.index ["bill_id"], name: "index_repairs_on_bill_id"
+    t.index ["order_id"], name: "index_repairs_on_order_id"
   end
 
   create_table "users", force: :cascade do |t|

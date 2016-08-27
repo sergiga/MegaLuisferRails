@@ -37,11 +37,11 @@ PhoneBrand.create(brand: "Xiaomi")
       contact_phone: Faker::PhoneNumber.phone_number
     )
   3.times do
-    bill =
-      client.bills.create(
+    order =
+      client.orders.create(
         price: Faker::Number.decimal(2, 2)
       )
-    bill.repairs.create(
+    order.repairs.create(
       status: 0,
       description: Faker::Lorem.sentence(10)
     )

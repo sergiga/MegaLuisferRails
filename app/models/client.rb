@@ -1,7 +1,7 @@
 class Client < ApplicationRecord
-  has_many :bills, inverse_of: :client
-  has_many :repairs, through: :bills
-  accepts_nested_attributes_for :bills
+  has_many :orders, inverse_of: :client
+  has_many :repairs, through: :orders
+  accepts_nested_attributes_for :orders
 
   validates :cif_dni, presence: true
   validates :name, presence: true
