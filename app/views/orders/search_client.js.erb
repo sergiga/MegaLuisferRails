@@ -1,3 +1,4 @@
+$('div#repair-client-form').children().remove();
 <% if @client.new_record? %>
   $('div#repair-client-form')
     .append("<%= escape_javascript render(partial: 'orders/new_client_order_form', object: @client) %>")
