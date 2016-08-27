@@ -1,0 +1,41 @@
+<% provide(:title, 'Nueva venta') %>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header hd-primary">
+        Cliente
+        <%= form_tag search_client_orders_path, class: "box-header-search", id: 'client_search_bar', method: :get, remote: true do %>
+          <%= text_field_tag :search, "", class: "form-control" %>
+          <%= button_tag id: "search", class: "form-control" do %>
+            <em class="icon-magnifier"></em>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="box-content" id="box-search-content", style="display:none">
+        <div id="repair-client-form"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header hd-green">
+        Resumen de venta
+      </div>
+      <div class="box-content">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Descripcion</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,4 @@
-<%= form_for(@client, :html => {class: 'form-primary'}, remote: true) do |f| %>
-
-  <h5 class="box-subsection">
-    <span class="bottom-border-clr">
-      <strong>Información del cliente</strong>
-    </span>
-  </h5>
+<%= form_for(@client, url: create_client_orders_path , html: {method: 'post', class: 'form-primary'}, remote: true) do |f| %>
 
   <div class="separator-form"></div>
 
@@ -40,37 +34,9 @@
     <label id="client_contact_phone_error" class="form-error-display col-md-3"></label>
   </div>
 
-  <h5 class="box-subsection">
-    <span class="bottom-border-clr">
-      <strong>Información de la reparacion</strong>
-    </span>
-  </h5>
-
-  <div class="separator-form"></div>
-
-  <%= f.fields_for :bills do |bills_form| %>
-    <div class="form-group row">
-      <%= bills_form.label :price, 'Precio', class: 'col-md-3' %>
-      <div class="col-md-6">
-        <%= bills_form.text_field :price, class: 'form-control' %>
-      </div>
-      <label id="bill_price_error" class="form-error-display col-md-3"></label>
-    </div>
-
-    <%= bills_form.fields_for :repairs do |repairs_form| %>
-      <div class="form-group row">
-        <%= repairs_form.label :description, 'Avería', class: 'col-md-3' %>
-        <div class="col-md-6">
-          <%= repairs_form.text_field :description, class: 'form-control' %>
-        </div>
-        <label id="repair_description_error" class="form-error-display col-md-3"></label>
-      </div>
-    <% end %>
-  <% end %>
-
   <div class="form-group row">
     <div class="col-md-9">
-      <%= f.submit "Registrar reparacion", class: "btn btn-primary btn-flat pull-right" %>
+      <%= f.submit "Crear cliente", class: "btn btn-primary btn-flat pull-right" %>
     </div>
   </div>
 <% end %>

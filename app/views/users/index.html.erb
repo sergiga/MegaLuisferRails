@@ -19,28 +19,26 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <% @users.each do |user| %>
-                <tr>
-                  <td><%= user.name %></td>
-                  <td><%= user.telephone %></td>
-                  <td><%= user.email %></td>
-                  <td><div class= "label <%=user.admin? ? "label-danger" :"label-primary" %>">
-                    <%= user.admin? ? "Admin" : "User" %></div>
-                  </td>
-                  <td class="table-btn-field-2">
-                    <%= link_to edit_user_path(user), class: 'table-btn pos-2' do %>
-                      <em class="icon-pencil"></em>
-                    <% end %>
-                    <%= link_to user, method: :delete,
-                                          data: { confirm: "¿Estas seguro de borrar a #{user.name} ? "},
-                                          class: 'table-btn pos-1' do %>
-                      <em class="icon-trash"></em>
-                    <% end %>
-                  </td>
-                </tr>
-              <% end %>
-            </tr>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.name %></td>
+                <td><%= user.telephone %></td>
+                <td><%= user.email %></td>
+                <td><div class= "label <%=user.admin? ? "label-danger" :"label-primary" %>">
+                  <%= user.admin? ? "Admin" : "User" %></div>
+                </td>
+                <td class="table-btn-field-2">
+                  <%= link_to edit_user_path(user), class: 'table-btn pos-2' do %>
+                    <em class="icon-pencil"></em>
+                  <% end %>
+                  <%= link_to user, method: :delete,
+                                        data: { confirm: "¿Estas seguro de borrar a #{user.name} ? "},
+                                        class: 'table-btn pos-1' do %>
+                    <em class="icon-trash"></em>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
       </div>

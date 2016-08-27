@@ -1,0 +1,20 @@
+<% if @client.valid?(:order_setup) %>
+  $('div#box-search-content').slideUp(600, function() {
+    $('div#repair-client-form').children().remove();
+    $('div#repair-client-form')
+      .append("<%= escape_javascript render(partial: 'orders/client_order_info', object: @client) %>");
+    }).delay(200).slideDown(600);
+  $("div#box-search-content")
+    .on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+     function(e){
+       $('div#repair-client-form').children().remove();
+       $('div#repair-client-form')
+         .append("<%= escape_javascript render(partial: 'orders/client_order_info', object: @client) %>");
+     });
+<% else %>
+  <% @client.errors.messages.each do |error| %>
+    $('#client_<%= escape_javascript(error.first.id2name) %>').css('border-color', '#DD4B39');
+    $('#client_<%= escape_javascript(error.first.id2name) %>_error')
+      .text("<%= escape_javascript(error[1].first).html_safe %>");
+  <% end %>
+<% end %>

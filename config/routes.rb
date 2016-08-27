@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/orders', to: 'orders#show_all'
   resources :orders, only: [:new, :create] do
     get :search_client, on: :collection
+    post :create_client, on: :collection
+    post :add_repair, on: :collection
   end
   resources :clients do
     resources :orders, only: [:index, :show, :edit, :update, :destroy]

@@ -1,8 +1,0 @@
-<% if @client.new_record? %>
-  $('div#repair-client-form')
-    .append("<%= escape_javascript render(partial: 'repairs/newclient_repair_form.html', object: @client) %>")
-<% else %>
-  $('div#repair-client-form')
-    .append("<%= escape_javascript render(partial: 'repairs/client_repair_form', object: [@client, @bill]) %>")
-<% end %>
-$('div#box-search-content').slideDown(600)
