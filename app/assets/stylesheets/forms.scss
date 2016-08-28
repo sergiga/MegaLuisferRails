@@ -33,6 +33,31 @@ form[class$="primary"] {
   }
 }
 
+.inline-form {
+  height: 50px;
+
+  .form-group {
+    margin-top: 15px;
+
+    &.inline-group {
+      float: right;
+    }
+
+    .form-control {
+      margin-left: 15px;
+      width: 120px;
+    }
+
+    .btn-inline {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      width: 80px;
+      margin-top: -2px;
+      margin-left: -5px;
+    }
+  }
+}
+
 .separator-form {
   margin-top: 20px;
 }

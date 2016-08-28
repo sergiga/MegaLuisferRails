@@ -35,6 +35,13 @@
           <tbody>
           </tbody>
         </table>
+        <%= form_for(@order, html: {class: "inline-form"}) do |f| %>
+          <div class="form-group inline-group">
+            <%= f.label :price, 'Precio' %>
+            <%= f.number_field :price, class: 'form-control',step: 0.1 %>
+            <%= f.submit "Terminar", class: "btn btn-primary btn-inline" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
