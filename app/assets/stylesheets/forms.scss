@@ -1,14 +1,21 @@
 form[class$="primary"] {
+
+  .form-group {
+    margin-bottom: 0px;
+  }
+
   label {
     font-weight: lighter;
-    height: 34px;
+    height: 24px;
     margin-bottom: 0;
-    text-align: right;
-    padding-top: 7px;
+    text-align: left;
+    padding-top: 0px;
+    font-weight: bold;
   }
 
   .form-error-display {
     text-align: left;
+    font-weight: normal;
     color: #DD4B39;
   }
 

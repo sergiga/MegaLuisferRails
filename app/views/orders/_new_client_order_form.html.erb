@@ -1,41 +1,39 @@
 <%= form_for(@client, url: create_client_orders_path , html: {method: 'post', class: 'form-primary'}, remote: true) do |f| %>
 
-  <div class="separator-form"></div>
-
   <div class="form-group row">
-    <%= f.label :cif_dni, 'CIF/DNI', class: 'col-md-3' %>
-    <div class="col-md-6">
+    <%= f.label :cif_dni, 'CIF/DNI', class: 'col-xs-12' %>
+    <div class="col-xs-12">
       <%= f.text_field :cif_dni, class: 'form-control' %>
     </div>
-    <label id="client_cif_dni_error" class="form-error-display col-md-3"></label>
+    <label id="client_cif_dni_error" class="form-error-display col-xs-12"></label>
   </div>
 
   <div class="form-group row">
-    <%= f.label :name, 'Nombre', class: 'col-md-3' %>
-    <div class="col-md-6">
+    <%= f.label :name, 'Nombre', class: 'col-xs-12' %>
+    <div class="col-xs-12">
       <%= f.text_field :name, class: 'form-control'  %>
     </div>
-    <label id="client_name_error" class="form-error-display col-md-3"></label>
+    <label id="client_name_error" class="form-error-display col-xs-12"></label>
   </div>
 
   <div class="form-group row">
-    <%= f.label :address, 'Dirección', class: 'col-md-3' %>
-    <div class="col-md-6">
+    <%= f.label :address, 'Dirección', class: 'col-xs-12' %>
+    <div class="col-xs-12">
       <%= f.text_field :address, class: 'form-control' %>
     </div>
-    <label id="client_address_error" class="form-error-display col-md-3"></label>
+    <label id="client_address_error" class="form-error-display col-xs-12"></label>
   </div>
 
   <div class="form-group row">
-    <%= f.label :contact_phone, 'Teléfono de contacto', class: "col-md-3" %>
-    <div class="col-md-6">
+    <%= f.label :contact_phone, 'Teléfono de contacto', class: "col-xs-12" %>
+    <div class="col-xs-12">
       <%= f.text_field :contact_phone, class: 'form-control' %>
     </div>
-    <label id="client_contact_phone_error" class="form-error-display col-md-3"></label>
+    <label id="client_contact_phone_error" class="form-error-display col-xs-12"></label>
   </div>
 
   <div class="form-group row">
-    <div class="col-md-9">
+    <div class="col-xs-12">
       <%= f.submit "Crear cliente", class: "btn btn-primary btn-flat pull-right" %>
     </div>
   </div>
