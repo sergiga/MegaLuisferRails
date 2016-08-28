@@ -8,15 +8,12 @@ Rails.application.routes.draw do
   get     '/home',    to: 'pages#home'
 
   resources :users
-  get '/orders', to: 'orders#show_all'
-  resources :orders, only: [:new, :create] do
-    get :search_client, on: :collection
-    post :create_client, on: :collection
-    post :add_repair, on: :collection
+  resources :orders, only: [:new, :create, :edit] do 
+    get :show_all, on: :collection
   end
   resources :clients do
-    resources :orders, only: [:index, :show, :edit, :update, :destroy]
-    get :repairs, on: :member
+    resources :orders, only: [:index, :show, :update, :destroy]
+    get :search, on: :collection
   end
   resources :repairs
   resources :component_descs

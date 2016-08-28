@@ -31,6 +31,30 @@ h5 {
     line-height: 21px;
 }
 
+.btn-inline-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  margin-bottom: 20px;
+
+  a:first-child {
+    margin-left: 0;
+  }
+
+  a:last-child {
+    margin-right: 0;
+  }
+
+  .btn-select {
+    position: relative;
+    float: left;
+    border-radius: 3px;
+    width: 30%;
+    margin: 0 2.5%;
+  }
+}
+
 .btn-flat {
   border-radius: 3px;
   width: auto;

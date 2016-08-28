@@ -1,4 +1,4 @@
-<%= form_for(@client, url: create_client_orders_path , html: {method: 'post', class: 'form-primary'}, remote: true) do |f| %>
+<%= form_for(@client, html: {method: 'post', class: 'form-primary'}, remote: true) do |f| %>
 
   <div class="form-group row">
     <%= f.label :cif_dni, 'CIF/DNI', class: 'col-xs-12' %>
