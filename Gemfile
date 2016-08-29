@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.0'
 # Use Bootstrap and SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.7'
+# Use Font-Awesome for scalable vector icon supported
+gem 'font-awesome-rails'
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
