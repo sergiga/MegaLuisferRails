@@ -1,0 +1,52 @@
+.box {
+  .box-content {
+    .order-item {
+      .order-header {
+        position: relative;
+        padding-left: 7px;
+        padding-left: 7px;
+        border: 1px solid #ccc;
+        margin-bottom: -1px;
+
+        .action-horizontal-grid {
+          display: inline-block;
+        }
+        .order-description {
+          padding: 7px 0;
+          width: 100%;
+
+          em {
+            padding: 11px;
+            right: 72px;
+            border: none;
+          }
+        }
+        .order-action {
+          position: absolute;
+          top: -1px;
+          padding: 7px 10px;
+          border: 1px solid #ccc;
+        }
+        :nth-child(2) {
+          right: 34px;
+        }
+        :nth-child(3) {
+          right: -1px;
+        }
+      }
+    }
+
+    .order-description {
+      .row {
+        margin: 0;
+        margin-bottom: -1px;
+        padding: 7px;
+        border: 1px solid #ccc;
+      }
+
+      div[class^="col"] {
+        padding: 0;
+      }
+    }
+  }
+}

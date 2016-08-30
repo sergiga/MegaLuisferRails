@@ -44,8 +44,10 @@ form[class$="primary"] {
     }
 
     .form-control {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px; 
       margin-left: 15px;
-      width: 120px;
+      width: 80px;
     }
 
     .btn-inline {

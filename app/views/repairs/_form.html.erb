@@ -1,0 +1,14 @@
+<%= form_for(@repair, remote: true) do |f| %>
+  <div class="form-group row">
+    <%= f.label :description, 'Descripción de la avería', class: 'col-xs-12' %>
+    <div class="col-xs-12">
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+    <label id="repair_description_error" class="form-error-display col-xs-12"></label>
+  </div>
+  <div class="form-group row">
+    <div class="col-xs-12">
+      <%= f.submit submit_label, class: "btn btn-primary btn-flat pull-right" %>
+    </div>
+  </div>
+<% end %>

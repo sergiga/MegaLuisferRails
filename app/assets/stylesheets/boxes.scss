@@ -38,7 +38,7 @@
       margin-right: -6px;
       padding-left: 10px;
       padding-right: 5px;
-      width: auto;
+      width: 120px;
     }
 
     button#search {
@@ -48,6 +48,18 @@
     input:hover, input:focus, input:active,
     button:hover, button:focus, button:active {
       border-color: #ccc;
+    }
+
+    .box-tools {
+      right: 10px;
+      top: 5px;
+
+      a {
+        padding: 5px;
+        font-size: 12px;
+        background: transparent;
+        color: #97a0b3;
+      }
     }
   }
 

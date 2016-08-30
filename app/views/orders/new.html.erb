@@ -18,9 +18,20 @@
     </div>
 
     <div class="btn-inline-group">
-      <%= link_to "Reparacion", new_repair_path, class: 'btn btn-select btn-primary', remote: true %>
-      <%= link_to "Componente", new_repair_path, class: 'btn btn-select btn-primary', remote: true %>
-      <%= link_to "Otros", new_repair_path, class: 'btn btn-select btn-primary', remote: true %>
+      <%= link_to "Reparacion", new_repair_path, class: 'btn btn-inline-3 btn-primary', remote: true %>
+      <%= link_to "Componente", new_repair_path, class: 'btn btn-inline-3 btn-primary', remote: true %>
+      <%= link_to "Otros", new_repair_path, class: 'btn btn-inline-3 btn-primary', remote: true %>
+    </div>
+
+    <div class="box" id="order-item-box" style="display:none">
+      <div class="box-header hd-primary">
+        <span id="order-item-header"></span>
+      </div>
+      <div class="box-content">
+        <div id="order-item-form">
+
+        </div>
+      </div>
     </div>
   </div>
 
@@ -30,17 +41,8 @@
         Resumen de venta
       </div>
       <div class="box-content">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Tipo</th>
-              <th>Descripcion</th>
-              <th>Acción</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+        <div id="repairs">
+        </div>
         <%= form_for(@order, html: {class: "inline-form"}) do |f| %>
           <div class="form-group inline-group">
             <%= f.label :price, 'Precio' %>

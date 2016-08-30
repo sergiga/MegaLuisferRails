@@ -1,0 +1,22 @@
+<div class="order-header">
+  <%= link_to "#repair-description-#{@repair.id}", class: "action-horizontal-grid order-description", data: { toggle: "collapse" } do %>
+    <%= @repair.status %>
+    <em class="icon-arrow-down order-action"></em>
+  <% end %>
+  <%= link_to edit_repair_path(@repair), class: "action-horizontal-grid order-action", remote: true do %>
+    <em class="icon-pencil"></em>
+  <% end %>
+  <%= link_to @repair, class: "action-horizontal-grid order-action", method: :delete, remote: true do %>
+    <em class="icon-trash"></em>
+  <% end %>
+</div>
+<%= content_tag :div, id: "repair-description-#{@repair.id}", class: "order-description collapse" do %>
+  <div class="row">
+    <div class="col-sm-3">
+      <b>Descripción:</b>
+    </div>
+    <div class="col-sm-9">
+      <%= @repair.description %>
+    </div>
+  </div>
+<% end %>
