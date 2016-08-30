@@ -45,7 +45,7 @@ form[class$="primary"] {
 
     .form-control {
       border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px; 
+      border-bottom-left-radius: 3px;
       margin-left: 15px;
       width: 80px;
     }
@@ -67,4 +67,10 @@ form[class$="primary"] {
 .form-control:focus {
   border-color: #3c8dbc;
   box-shadow: none;
+}
+
+.form-control[disabled] {
+  cursor: not-allowed;
+  background-color: #eee;
+  opacity: 1;
 }
