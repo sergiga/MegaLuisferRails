@@ -8,14 +8,15 @@
   <div class="form-group row">
     <%= label_tag :repair_model_id, 'Modelo', class: 'col-xs-12' %>
     <div class="col-xs-12">
-      <% grouped_models = PhoneBrand.all.map { |brand| [brand.brand, brand.phones.map { |phone| [phone.model, phone.id] }] } %>
+      <% grouped_models = PhoneBrand.includes(:phones).all.map { |brand| [brand.brand, brand.phones.map { |phone| [phone.model, phone.id] }] } %>
       <%= select_tag :repair_model_id, grouped_options_for_select(grouped_models), class: 'form-control', include_blank: true, disabled: true %>
     </div>
   </div>
   <div class="form-group row">
     <%= f.label :phone_id, 'Modelo', class: 'col-xs-12' %>
     <div class="col-xs-12">
-      <% grouped_reviews = Phone.all.map { |phone| [phone.model, Phone.where(model: phone.model).map { |review| [review.model_review, review.id] }] } %>
+      <% phones = Phone.order(:model_review) %>
+      <% grouped_reviews = phones.map { |phone| [phone.model, phones.select{ |p| p.model.eql? phone.model }.map { |review| [review.model_review, review.id] }] } %>
       <%= f.select(:phone_id, grouped_options_for_select(grouped_reviews), { include_blank: true }, { class: 'form-control', disabled: true }) %>
     </div>
   </div>

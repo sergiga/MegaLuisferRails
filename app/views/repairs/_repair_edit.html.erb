@@ -1,5 +1,5 @@
 <div class="order-header">
-  <%= link_to "#repair-description-#{@repair.id}", class: "action-horizontal-grid order-description", data: { toggle: "collapse" } do %>
+  <%= link_to "#repair-description-#{@repair.id}", class: "action-horizontal-grid order-main-description", data: { toggle: "collapse" } do %>
     <%= @repair.status %>
     <em class="icon-arrow-down order-action"></em>
   <% end %>
@@ -10,7 +10,15 @@
     <em class="icon-trash"></em>
   <% end %>
 </div>
-<%= content_tag :div, id: "repair-description-#{@repair.id}", class: "order-description collapse" do %>
+<%= content_tag :div, id: "repair-description-#{@repair.id}", class: "order-sub-description collapse" do %>
+<div class="row">
+  <div class="col-sm-3">
+    <b>Modelo:</b>
+  </div>
+  <div class="col-sm-9">
+    <%= "#{@repair.phone.phone_brand.brand} #{@repair.phone.model} #{@repair.phone.model_review}" %>
+  </div>
+</div>
   <div class="row">
     <div class="col-sm-3">
       <b>Descripción:</b>

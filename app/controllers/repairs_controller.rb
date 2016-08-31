@@ -26,6 +26,6 @@ class RepairsController < ApplicationController
 
   private
   def repair_params
-    params.require(:repair).permit(:description)
+    params.require(:repair).permit(:phone_id, :description)
   end
 end

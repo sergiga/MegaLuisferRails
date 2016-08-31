@@ -42,6 +42,7 @@
       </div>
       <div class="box-content">
         <div id="repairs">
+          <%= render @order.repairs %>
         </div>
         <%= form_for(@order, html: { class: "inline-form" }) do |f| %>
           <div class="form-group inline-group">
