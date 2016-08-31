@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get     '/home',    to: 'pages#home'
 
   resources :users
-  resources :orders, only: [:new, :create, :edit] do 
+  resources :orders, only: [:new, :update, :create, :edit] do
     get :show_all, on: :collection
   end
   resources :clients do
-    resources :orders, only: [:index, :show, :update, :destroy]
+    resources :orders, only: [:index, :show, :destroy]
     get :search, on: :collection
   end
   resources :repairs

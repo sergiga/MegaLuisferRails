@@ -1,10 +1,8 @@
 class ClientsController < ApplicationController
   def create
     @order = current_order
-    @client = Client.new(client_params)
-    @order.client = @client
-    @order.save
-    session[:order_id] = @order.save
+    @client = Client.create(client_params)
+    @order.update(client_id: @client.id)
   end
 
   def search
@@ -13,9 +11,7 @@ class ClientsController < ApplicationController
     if @client.new_record?
       @client.cif_dni = params[:search]
     else
-      @order.client = @client
-      @order.save
-      session[:order_id] = @order.save
+      @order.update(client_id: @client.id)
     end
   end
 
